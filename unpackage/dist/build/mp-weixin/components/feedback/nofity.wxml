@@ -1,0 +1,1 @@
+<block wx:if="{{realShow}}"><view class="{{['content '+animation]}}" style="{{('background-color:'+backgroundColor)}}">{{content}}</view></block>

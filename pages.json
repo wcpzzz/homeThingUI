@@ -1,0 +1,82 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
+		{
+		    "path" : "pages/home/home",
+		    "style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367"
+			}
+		}
+
+    ],
+	
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor":"#4e5367",
+		"backgroundColorTop":"#4e5367"
+	}
+}
+
+
+//wcpzzz字典
+/*
+下拉刷新
+"enablePullDownRefresh":true,
+
+头顶背景颜色
+"navigationBarBackgroundColor":"#4e5367"
+
+头顶字体内容
+"navigationBarTitleText": "健身房预约"
+
+头顶字体颜色
+"navigationBarTextStyle": "white"
+
+自定义头顶
+"navigationStyle":"custom"
+
+全局设置
+"globalStyle": {
+"navigationBarTextStyle": "black",
+"navigationBarTitleText": "uni-app",
+"navigationBarBackgroundColor": "#F8F8F8",
+"backgroundColor": "#F8F8F8"
+},
+
+tarbar设置
+"tabBar": {
+//		"color": "#333333",
+//		"selectedColor": "#f06c7a",
+"color": "#5D5D5D",
+"selectedColor": "#FBC700",
+"borderStyle": "black",
+"backgroundColor": "#242424",
+"list": [
+{
+"pagePath": "pages/tarBar/shop/shop",
+"iconPath": "static/imgs/gray_shop.png",
+"selectedIconPath": "static/imgs/yellow_shop.png",
+"text": "门店"
+},
+{
+"pagePath": "pages/tarBar/coursetable/coursetable",
+"iconPath": "static/imgs/gray_timetable.png",
+"selectedIconPath": "static/imgs/yellow_timetable.png",
+"text": "课表"
+},
+{
+"pagePath": "pages/tarBar/appointment/appointment",
+"iconPath": "static/imgs/gray_appoint.png",
+"selectedIconPath": "static/imgs/yellow_appoint.png",
+"text": "我的预约"
+},
+{
+"pagePath": "pages/tarBar/ownerinfo/ownerinfo",
+"iconPath": "static/imgs/gray_personinfo.png",
+"selectedIconPath": "static/imgs/yellow_personinfo.png",
+"text": "个人信息"
+}
+]
+}*/

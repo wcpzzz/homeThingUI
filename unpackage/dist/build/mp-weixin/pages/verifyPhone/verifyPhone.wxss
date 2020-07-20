@@ -1,0 +1,1 @@
+.tips{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column;color:#7e7e7e}.tips text{display:block}.cu-form-group .title{min-width:calc(4em + 15px)}
