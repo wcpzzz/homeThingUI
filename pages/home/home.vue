@@ -1,6 +1,76 @@
 <template>
     <view class="page">
-        <view>ok</view>
+        <view style="font-size: 30px;text-align: center;">
+            家庭物品管理
+        </view>
+        <view class="functionList" style="margin-bottom: 10px">
+            <view class="functionitem">
+                <!--        前往物品列表-->
+                <view class="icons cuIcon-goodsfill">
+                </view>
+                <view>物品管理</view>
+            </view>
+            <!--        前往成员列表-->
+            <view class="functionitem">
+                <view class="icons cuIcon-peoplefill">
+                </view>
+                <view>成员管理</view>
+            </view>
+            <!--        前往仓库列表-->
+            <view class="functionitem">
+                <view class="icons cuIcon-homefill">
+                </view>
+                <view>仓库管理</view>
+            </view>
+        </view>
+        <view class="search-out">
+            <view class="searchinput">
+                <view class="cu-bar search">
+                    <view class="search-form round">
+                        <text class="cuIcon-search "></text>
+                        <input type="text" placeholder="物品查询" confirm-type="search" @input="searchIconThing"></input>
+                    </view>
+                </view>
+            </view>
+            <view>物品列表</view>
+            <view class="cu-form-group">
+                <view class="title">1234</view>
+                <view class="content">23435</view>
+                <sanjiao></sanjiao>
+            </view>
+        </view>
+        <view class="search-out">
+            <view class="searchinput">
+                <view class="cu-bar search ">
+                    <view class="search-form round">
+                        <text class="cuIcon-search"></text>
+                        <input type="text" placeholder="成员查询" confirm-type="search" @input="searchIconUser"></input>
+                    </view>
+                </view>
+            </view>
+            <view>成员列表</view>
+            <view class="cu-form-group">
+                <view class="title">1234</view>
+                <view class="content">23435</view>
+                <sanjiao></sanjiao>
+            </view>
+        </view>
+        <view class="search-out">
+            <view class="searchinput">
+                <view class="cu-bar search">
+                    <view class="search-form round">
+                        <text class="cuIcon-search"></text>
+                        <input type="text" placeholder="仓库查询" confirm-type="search" @input="searchIconLocation"></input>
+                    </view>
+                </view>
+            </view>
+            <view>仓库列表</view>
+            <view class="cu-form-group">
+                <view class="title">1234</view>
+                <view class="content">23435</view>
+                <sanjiao></sanjiao>
+            </view>
+        </view>
         <c-notify ref='notify'></c-notify>
     </view>
 </template>
@@ -10,11 +80,28 @@
 
     export default {
         data() {
-            return {}
+            return {
+                searchItems: {
+                    placeholder: '请输入平台流水号或商户流水号',
+                    maxlength: 30,
+                },
+            }
         },
         methods: {
+            searchIconThing(e) {
+                console.log(e.detail.value)
+            },
+            searchIconUser(e) {
+                console.log(e.detail.value)
+            },
+            searchIconLocation(e) {
+                console.log(e.detail.value)
+            },
             toPage(path) {
                 this.COMMONFUNCTION.toPage(path)
+            },
+            confirm(transId) {
+                console.log('ok')
             },
         },
         computed: {},
@@ -45,8 +132,26 @@
         height: 100vh !important;
         padding: 0 10px;
         white-space: pre-wrap; /*空格*/
-        background-color: #242424;
+        /*background-color: #242424;*/
     }
+
+    .functionList {
+        display: flex;
+        justify-content: space-between;
+
+        .functionitem {
+            text-align: center;
+        }
+
+        .icons {
+            font-size: 38px;
+
+        }
+    }
+    .search-out{
+        margin-bottom: 10px;
+    }
+
 </style>
 
 <!--参考书-->

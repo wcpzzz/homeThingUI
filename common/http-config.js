@@ -71,27 +71,68 @@ const unRegist='X3';//未注册
 const cantGetCard='X4';//不可领取卡
 
 const interfaces={
+	//先统一配置地址，注意接口名格式规范
+
+	location: 'location',//getParams
+	createLocation: 'location/create',
+	pageLocation:'location/page',
+	findOneLocation:'location/findOne',
+	findListLocation:'location/findList',
+	updateByIdLocation:'location/updateById',
+	deleteLocation:'location/delete',//getParams
+
+	thing:'thing',//get
+	createThing: 'thing/create',
+	pageThing:'thing/page',
+	findOneThing:'thing/findOne',
+	findListThing:'thing/findList',
+	updateByIdThing:'thing/updateById',
+	deleteThing:'thing/delete',//get
+
+	thingandlocation:'thingandlocation',//getParams
+	createThingandlocation: 'thingandlocation/create',
+	pageThingandlocation:'thingandlocation/page',
+	findOneThingandlocation:'thingandlocation/findOne',
+	findListThingandlocation:'thingandlocation/findList',
+	updateByIdThingandlocation:'thingandlocation/updateById',
+	deleteThingandlocation:'thingandlocation/delete',//getParams
+
+	thingandtype:'thingandtype',//getParams
+	createThingandtype: 'thingandtype/create',
+	pageThingandtype:'thingandtype/page',
+	findOneThingandtype:'thingandtype/findOne',
+	findListThingandtype:'thingandtype/findList',
+	updateByIdThingandtype:'thingandtype/updateById',
+	deleteThingandtype:'thingandtype/delete',
+
+	thingtype:'thingtype',//getParams
+	createThingtype: 'thingtype/create',
+	pageThingtype:'thingtype/page',
+	findOneThingtype:'thingtype/findOne',
+	findListThingtype:'thingtype/findList',
+	updateByIdThingtype:'thingtype/updateById',
+	deleteThingtype:'thingtype/delete',//getParams
+
+	user2:'user2',//getParams
+	createUser2: 'user2/create',
+	pageUser2:'user2/page',
+	findOneUser2:'user2/findOne',
+	findListUser2:'user2/findList',
+	updateByIdUser2:'user2/updateById',
+	deleteUser2:'user2/delete',//getParams
+
+
+	/*
+	:'',
+	create: '/create',
+	page:'/page',
+	findOne:'/findOne',
+	findList:'/findList',
+	updateById:'/updateById',
+	delete:'/delete',
+	*/
 	login:'/cust/custLogin',
 	regist:'/cust/custRegister',
-	isReceive:'/cust/isReceive',
-	vipQueryCardType:'/card/vipQueryCardType',
-	queryCard:'/cust/queryCard',
-	receive:'/cust/receive',
-	showPayCode:'/cust/showPayCode',
-	queryCoupon:'/coupon/vip/list',
-	generateCouponToken:'/coupon/generateToken',
-	receiveCoupon:'/coupon/receive',
-	isReceiveCoupon:'/coupon/isReceive',
-	listAllCouponByArgs:'/coupon/listAllByArgs',
-	countOfGrp:'/coupon/vip/countOfGrp',
-	queryTrans:'/cust/queryTrans',
-	sendSms:'/cust/sendSms',
-	queryCust:'/cust/queryCust',
-	updateCustInfo:'/cust/updateCustInfo',
-	queryPoints:'/points/vip/list',
-	queryCouponCanUsed:'/coupon/vip/listCanUsed',
-	queryCouponCantUsed:'/coupon/vip/listCantUsed',
-	queryCouponHashUsed:'/coupon/vip/listHasUsed'
 }
 
 export default{

@@ -1632,7 +1632,7 @@ button.cuIcon.lg {
 	flex: 1;
 	display: flex;
 	align-items: center;
-	margin: 0 30upx;
+	/*margin: 0 30upx;*/
 }
 
 .cu-bar .search-form+.action {
@@ -2327,6 +2327,24 @@ button.cuIcon.lg {
 .cu-form-component+.cu-form-component {
 	border-top: 1upx solid #eee;
 }
+.cu-form-group2 {
+	width: 100%;
+	background-color: #ffffff;
+	padding: 1upx 25upx;
+	display: flex;
+	align-items: center;
+	min-height: 90upx;
+	justify-content: space-between;
+}
+.cu-form-group2 .title {
+	color: #7E7E7E;
+	text-align: justify;
+	padding-right: 30upx;
+	font-size: 28upx;
+	position: relative;
+	height: 45upx;
+	line-height: 45upx;
+}
 
 .cu-form-group {
 	width: 100%;
@@ -2339,7 +2357,7 @@ button.cuIcon.lg {
 }
 
 .cu-form-group+.cu-form-group {
-	border-top: 1upx solid #eee;
+	border-top: 1upx solid #242424;
 }
 
 .cu-form-group .title {
@@ -2355,7 +2373,7 @@ button.cuIcon.lg {
 .cu-form-group input {
 	flex: 1;
 	font-size: 28upx;
-	color: #555;
+	color: #000000;
 	padding-right: 20upx;
 }
 
@@ -2365,8 +2383,11 @@ button.cuIcon.lg {
 	position: relative;
 	padding-right: 40upx;
 }
- 
 
+.cu-form-group content {
+	display: flex;
+	align-items: center;
+}
 
 .cu-form-group textarea {
 	margin: 32upx 0 30upx;
@@ -2442,7 +2463,16 @@ button.cuIcon.lg {
 	right: -20upx;
 	margin: auto;
 }
-
+.cu-form-group sanjiao::after {
+	font-family: cuIcon;
+	display: flex;
+	content: "\e6a3";
+	font-size: 34upx;
+	color: #8799a3;
+	text-align: center;
+	right: -20upx;
+	margin: auto;
+}
 
 .cu-form-group textarea[disabled],
 .cu-form-group textarea[disabled] .placeholder {
@@ -2544,9 +2574,9 @@ button.cuIcon.lg {
 	transform: translateX(0%);
 }
 .cu-modal .cu-dialog>.cu-bar:first-child .action{
-  min-width: 100rpx;
-  margin-right: 0;
-  min-height: 100rpx;
+	min-width: 100rpx;
+	margin-right: 0;
+	min-height: 100rpx;
 }
 /* ==================
          轮播
@@ -3473,10 +3503,29 @@ scroll-view.cu-steps .cu-item {
 	color: #ffffff;
 }
 .bg-base {
-	background-color: #ec6c00;
+	background-color: #242424;
 	color: #ffffff;
 }
-
+.bg-base2 {
+	background-color: #333333;
+	color: #ffffff;
+}
+.bg-base3 {
+	background-color: #FCC800;
+	color: #ffffff;
+}
+.bg-base4 {
+	background-color: #555556;
+	color: #ffffff;
+}
+.word-base{
+	/*background-color: #767678;*/
+	color: #767678;
+}
+.word-base2{
+	/*background-color: #767678;*/
+	color: #c8c7cc;
+}
 .bg-cyan {
 	background-color: #1cbbb4;
 	color: #ffffff;
@@ -3958,4 +4007,12 @@ scroll-view.cu-steps .cu-item {
 .line-white,
 .lines-white {
 	color: #ffffff;
+}
+.alert {
+	display: flex;
+	justify-content: center;
+	color: #646464;
+	margin-top: 10px;
+	padding-bottom: 10%;
+
 }
