@@ -421,11 +421,13 @@ const postNoAutoLogin = (request,interfaceName,hideLoading,hideError)=>{
  */
 const post = (request,interfaceName,hideLoading,hideError)=>{
 	return new Promise((resolve,inject)=>{
-		commonFuntcion.checkStorgeHasUser(true).then(token=>{
+		// commonFuntcion.checkStorgeHasUser(true).then(token=>{
+		console.log(request)
+		let token = 'eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIzMzc2MjkzMDQyODIxNDA2NzI0MTAiLCJ1c2VySWQiOiIzMzc2MjkzMDQyNjExNjkxNTI0MTAiLCJ1c2VyTmFtZSI6IumihOS7mOWNoeaVsOaNruaOpeWFpSIsImV4cGlyZSI6MTU5ODA2MjM3ODI2NywidG9rZW5kYXRlIjoiMjAyMC0wNy0yMiIsImNvbnRhY3RNb2JpbGUiOiIxODkgMTQ3MyA3MTYxIiwiY2hhbm5lbFNvdXJjZXMiOiIzIiwiY29udGFjdEVtYWlsIjoiY2hlbnlAc3Mtc29mdC5jb20iLCJjb250YWN0TmFtZSI6IumZiOa0iyIsImFwcE5hbWUiOiLpooTku5jljaHmlbDmja7mjqXlhaUiLCJhcHBJZCI6IjMzNzYyOTMwNDI4MjE0MDY3MjQxMCIsInBJZCI6InAwMDAxNyIsInRva2VuTm8iOiIxIiwidG9rZW50eXBlIjoiY2xpZW50In0.ISzLALNeptKCCT_L_6NtcWddnQORG5o-yhPSaAHrHQsO0C_vFZHlky9IRQAoTwgIoUZldICn2B-a6oLyY7u3Re7BEvuSNhkAdI0p2WYB16cbJ53zgsR57bo8bT5sIdkT-NDATgxBUB5HCUoqE0gqWQv05dRoizMTK1uiwGPcte4'
 			realPost(request,interfaceName,token,hideLoading,hideError).then((res)=>{
 				resolve(res);
 			}).catch((reason)=>{inject(reason)})
-		}).catch(()=>{inject('尚未登录!')})
+		// }).catch(()=>{inject('尚未登录!')})
 	})
 }
 

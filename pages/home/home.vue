@@ -76,26 +76,25 @@
 </template>
 
 <script>
-    import {getTrainerList} from '@/common/api.js'
+    import {findListThing,findListUser2,findListLocation} from '@/common/api.js'
 
     export default {
         data() {
             return {
-                searchItems: {
-                    placeholder: '请输入平台流水号或商户流水号',
-                    maxlength: 30,
-                },
-            }
+                itemsListThing: [],
+                itemsListUser2: [],
+                itemsListLocation: []
+            };
         },
         methods: {
             searchIconThing(e) {
-                console.log(e.detail.value)
+                this.findListThing(e.detail.value)
             },
             searchIconUser(e) {
-                console.log(e.detail.value)
+                this.findListUser2(e.detail.value)
             },
             searchIconLocation(e) {
-                console.log(e.detail.value)
+                this.findListLocation(e.detail.value)
             },
             toPage(path) {
                 this.COMMONFUNCTION.toPage(path)
@@ -103,6 +102,36 @@
             confirm(transId) {
                 console.log('ok')
             },
+            // 物品搜索
+            findListThing(item) {
+                let request = {};
+                request.thingName = item
+                findListThing(request).then((res)=>{
+                    this.itemsListThing = res.data
+                }).catch((err)=>{
+                    console.log('findListThing'+err)
+                })
+            },
+            // 成员搜索
+            findListUser2(item) {
+                let request = {};
+                request.user2Name = item
+                findListUser2(request).then((res)=>{
+                    this.findListUser2 = res.data
+                }).catch((err)=>{
+                    console.log('findListUser2'+err)
+                })
+            },
+            // 仓库搜索
+            findListLocation(item) {
+                let request = {};
+                request.locationName = item
+                findListLocation(request).then((res)=>{
+                    this.findListLocation = res.data
+                }).catch((err)=>{
+                    console.log('findListLocation'+err)
+                })
+            }
         },
         computed: {},
         onReachBottom() {

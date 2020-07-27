@@ -1781,7 +1781,7 @@ to {
 	-webkit-box-align: center;
 	-webkit-align-items: center;
 	        align-items: center;
-	margin: 0 30rpx;
+	/*margin: 0 30upx;*/
 }
 .cu-bar .search-form+.action {
 	margin-right: 30rpx;
@@ -2446,6 +2446,30 @@ to {
 .cu-form-component+.cu-form-component {
 	border-top: 1rpx solid #eee;
 }
+.cu-form-group2 {
+	width: 100%;
+	background-color: #ffffff;
+	padding: 1rpx 25rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	min-height: 90rpx;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+}
+.cu-form-group2 .title {
+	color: #7E7E7E;
+	text-align: justify;
+	padding-right: 30rpx;
+	font-size: 28rpx;
+	position: relative;
+	height: 45rpx;
+	line-height: 45rpx;
+}
 .cu-form-group {
 	width: 100%;
 	background-color: #ffffff;
@@ -2462,7 +2486,7 @@ to {
 	        justify-content: space-between;
 }
 .cu-form-group+.cu-form-group {
-	border-top: 1rpx solid #eee;
+	border-top: 1rpx solid #242424;
 }
 .cu-form-group .title {
 	color: #7E7E7E;
@@ -2478,7 +2502,7 @@ to {
 	-webkit-flex: 1;
 	        flex: 1;
 	font-size: 28rpx;
-	color: #555;
+	color: #000000;
 	padding-right: 20rpx;
 }
 .cu-form-group>text[class*="icon-"] {
@@ -2487,6 +2511,14 @@ to {
 	        box-sizing: border-box;
 	position: relative;
 	padding-right: 40rpx;
+}
+.cu-form-group content {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
 }
 .cu-form-group textarea {
 	margin: 32rpx 0 30rpx;
@@ -2563,6 +2595,18 @@ to {
 	text-align: center;
 	top: 0;
 	bottom: 0;
+	right: -20rpx;
+	margin: auto;
+}
+.cu-form-group sanjiao::after {
+	font-family: cuIcon;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	content: "\e6a3";
+	font-size: 34rpx;
+	color: #8799a3;
+	text-align: center;
 	right: -20rpx;
 	margin: auto;
 }
@@ -2663,9 +2707,9 @@ to {
 	        transform: translateX(0%);
 }
 .cu-modal .cu-dialog>.cu-bar:first-child .action{
-  min-width: 100rpx;
-  margin-right: 0;
-  min-height: 100rpx;
+	min-width: 100rpx;
+	margin-right: 0;
+	min-height: 100rpx;
 } 
 /* ==================
          轮播
@@ -3488,8 +3532,28 @@ scroll-view.cu-steps .cu-item {
 	color: #ffffff;
 }
 .bg-base {
-	background-color: #ec6c00;
+	background-color: #242424;
 	color: #ffffff;
+}
+.bg-base2 {
+	background-color: #333333;
+	color: #ffffff;
+}
+.bg-base3 {
+	background-color: #FCC800;
+	color: #ffffff;
+}
+.bg-base4 {
+	background-color: #555556;
+	color: #ffffff;
+}
+.word-base{
+	/*background-color: #767678;*/
+	color: #767678;
+}
+.word-base2{
+	/*background-color: #767678;*/
+	color: #c8c7cc;
 }
 .bg-cyan {
 	background-color: #1cbbb4;
@@ -3898,6 +3962,17 @@ scroll-view.cu-steps .cu-item {
 .line-white,
 .lines-white {
 	color: #ffffff;
+}
+.alert {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	color: #646464;
+	margin-top: 10px;
+	padding-bottom: 10%;
 }
 @-webkit-keyframes cuIcon-spin {
 0% {

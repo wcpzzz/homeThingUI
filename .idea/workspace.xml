@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37d8e760-096f-466b-85a6-275868b54474" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/search-input.vue" afterDir="false" />
+    <list default="true" id="37d8e760-096f-466b-85a6-275868b54474" name="Default Changelist" comment="7.21">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colorui/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/colorui/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/http-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/http-config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/runtime.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/components/feedback/nofity.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/components/feedback/nofity.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/main.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/main.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/vendor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/feedback/nofity.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/feedback/nofity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/search-input.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/search-input.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/search-input.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/search-input.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/about-content/privacyAgreement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/about-content/privacyAgreement.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/about-content/privacyAgreement.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/about-content/privacyAgreement.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/about-content/userAgreement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/about-content/userAgreement.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/about-content/userAgreement.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/about-content/userAgreement.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/getCards/getCards.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/getCards/getCards.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/getCards/getCards.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/getCards/getCards.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/getCoupons/getCoupons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/getCoupons/getCoupons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/getCoupons/getCoupons.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/getCoupons/getCoupons.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards-and-coupon/mycards-and-coupon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards-and-coupon/mycards-and-coupon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards-and-coupon/mycards-and-coupon.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards-and-coupon/mycards-and-coupon.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/card.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/card.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/card.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/card.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myData.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myData.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myInfo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myInfo.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myInfo.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myPoints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myPoints.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myPoints.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myPoints.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/mySetting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/mySetting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/mySetting.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/mySetting.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myTrans.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myTrans.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myTrans.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/myTrans.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/mycards.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/mycards.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/mycards.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycards/mycards.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycoupon/details.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycoupon/details.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycoupon/details.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycoupon/details.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycoupon/mycoupon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycoupon/mycoupon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycoupon/mycoupon.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycoupon/mycoupon.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycoupon/mycoupons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycoupon/mycoupons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycoupon/mycoupons.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/mycoupon/mycoupons.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/verifyPhone/verifyPhone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/verifyPhone/verifyPhone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/verifyPhone/verifyPhone.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/verifyPhone/verifyPhone.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/project.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/http-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/http-utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +148,8 @@
       <updated>1595219336804</updated>
       <workItem from="1595219338242" duration="8824000" />
       <workItem from="1595233186741" duration="166000" />
-      <workItem from="1595299000881" duration="1216000" />
+      <workItem from="1595299000881" duration="16348000" />
+      <workItem from="1595811507793" duration="1193000" />
     </task>
     <task id="LOCAL-00001" summary="7.20">
       <created>1595219379137</created>
@@ -81,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595219379137</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="7.21">
+      <created>1595305154482</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595305154482</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,29 +173,34 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="7.20" />
-    <option name="LAST_COMMIT_MESSAGE" value="7.20" />
+    <MESSAGE value="7.21" />
+    <option name="LAST_COMMIT_MESSAGE" value="7.21" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="339" y="8" key="CommitChangelistDialog2" timestamp="1595219375872">
+    <state x="339" y="8" key="CommitChangelistDialog2" timestamp="1595466205977">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="339" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1595219375872" />
+    <state x="339" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1595466205977" />
     <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1595219345718">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595219345718" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1595219480792">
+    <state x="514" y="123" key="RollbackChangesDialog" timestamp="1595554019372">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595219480792" />
+    <state x="514" y="123" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1595554019372" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1595305166675">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595305166675" />
     <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595219352571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1595219352571" />
-    <state x="447" y="145" width="701" height="534" key="find.popup" timestamp="1595238355670">
+    <state x="447" y="145" width="701" height="534" key="find.popup" timestamp="1595555155064">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="145" width="701" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1595238355670" />
+    <state x="447" y="145" width="701" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1595555155064" />
     <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1595238384062">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -1,21 +1,6 @@
 {
   "pages": [
-    "pages/mycards-and-coupon/mycards-and-coupon",
-    "pages/mycards/mycards",
-    "pages/mycoupon/mycoupon",
-    "pages/mycards/card",
-    "pages/getCards/getCards",
-    "pages/getCoupons/getCoupons",
-    "pages/mycoupon/details",
-    "pages/mycoupon/mycoupons",
-    "pages/mycards/myTrans",
-    "pages/mycards/myData",
-    "pages/verifyPhone/verifyPhone",
-    "pages/mycards/myInfo",
-    "pages/about-content/privacyAgreement",
-    "pages/about-content/userAgreement",
-    "pages/mycards/mySetting",
-    "pages/mycards/myPoints"
+    "pages/home/home"
   ],
   "subPackages": [],
   "window": {
@@ -25,6 +10,5 @@
   },
   "usingComponents": {
     "c-notify": "/components/feedback/nofity"
-  },
-  "sitemapLocation": "sitemap87.json"
+  }
 }

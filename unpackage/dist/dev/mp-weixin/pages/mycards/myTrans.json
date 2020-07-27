@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "我的账单",
-  "enablePullDownRefresh": true,
-  "usingComponents": {
-    "search-input": "/components/search-input"
-  }
-}

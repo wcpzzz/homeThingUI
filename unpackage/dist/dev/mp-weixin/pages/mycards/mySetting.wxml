@@ -1,1 +1,0 @@
-<view class="cu-list menu margin-top"><view data-event-opts="{{[['tap',[['toChangePwd',['$event']]]]]}}" class="cu-item arrow" bindtap="__e"><view class="content"><block wx:if="{{ishaspwd}}"><text class="text-grey text-df">修改支付密码</text></block><block wx:else><text class="text-grey text-df">设置支付密码</text></block></view></view></view>

@@ -7,12 +7,7 @@ const dateApiFormat='yyyy/MM/dd'
 //用日期去查询默认初始时间
 const defaultStartDate='2016-01-01';//舍弃
 //测试地址
-const testUrl='http://192.168.0.219:9012/vip-api'
-
-// const testUrl='https://test.chenghcloud.cn/vip-api'
-
-// const testUrl='http://192.168.0.65:9012/vip-api'
-// const testUrl='https://192.168.0.219:9000/vip-api'
+const testUrl='http://localhost:8088/'
 
 //生产地址
 const releaseUrl='https://ss-pm.shijicloud.com/vip-api'
