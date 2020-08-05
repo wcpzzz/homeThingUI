@@ -18,11 +18,13 @@
 	@import "colorui/main.css";
 	@import "colorui/icon.css";
 	@import "colorui/animation.css";
-	
+    @import "colorui/wcpzzz.css";
 </style>
 
 
-
+<!--开发流程-->
+<!--步骤设计：先写创建，后写修改，最后写查询-->
+<!--单页面设计：先注释好界面内容，再定好data数据，然后引入接口-->
 
 
 <!--

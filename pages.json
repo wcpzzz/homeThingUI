@@ -8,6 +8,114 @@
 				"navigationBarBackgroundColor":"#4e5367",
 				"backgroundColorTop":"#4e5367"
 			}
+		},
+		{
+			"path" : "pages/user/user",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "成员管理"
+			}
+		},
+		{
+			"path" : "pages/user/usercreate",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "成员新增"
+			}
+		},
+		{
+			"path" : "pages/user/userupdate",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "成员修改"
+			}
+		},
+		{
+			"path" : "pages/user/userrecord",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "成员记录"
+			}
+		},
+		{
+			"path" : "pages/location/location",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "仓库管理"
+			}
+		},
+		{
+			"path" : "pages/location/locationcreate",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "仓库新增"
+			}
+		},
+		{
+			"path" : "pages/location/locationupdate",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "仓库修改"
+			}
+		},
+		{
+			"path" : "pages/location/locationrecord",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "仓库记录"
+			}
+		},
+		{
+			"path" : "pages/thing/thing",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "物品管理"
+			}
+		},
+		{
+			"path" : "pages/thing/thingcreate",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "物品新增"
+			}
+		},
+		{
+			"path" : "pages/thing/thingupdate",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "物品修改"
+			}
+		},
+		{
+			"path" : "pages/thing/thingrecord",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "物品记录"
+			}
 		}
 
     ],

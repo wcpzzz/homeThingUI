@@ -757,7 +757,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7091,7 +7091,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7112,14 +7112,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7195,7 +7195,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8532,7 +8532,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367" } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/user": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "成员管理", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/location/location": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "仓库管理", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/thing/thing": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "物品管理", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/usercreate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "成员新增", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/userrecord": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "成员记录", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/location/locationcreate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "仓库新增", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/location/locationrecord": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "仓库记录", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/thing/thingcreate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "物品新增", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/thing/thingrecord": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "物品记录", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/thing/thingupdate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "物品修改", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/userupdate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "成员修改" }, "pages/location/locationupdate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "仓库修改" } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -9545,6 +9545,7 @@ var findListUser2 = function findListUser2(item) {
     var request = {};
     request = item;
     _httpUtils.default.post(request, _httpConfig.default.interfaces.findListUser2).then(function (response) {
+
       resolve(response);
     }).catch(function (res) {
       reject(res);
@@ -9816,7 +9817,7 @@ var realPost = function realPost(request, interfaceName, token, hideLoading, hid
         res = res.data;
         console.log("response:----" + JSON.stringify(res));
         uni.hideLoading();
-        if (res.code == _success) {
+        if (res.success == true) {
           if (res.token) {
             _commonFunction.default.saveStorage(_storageConfig.default.tokenStorage, res.token).
             then(function () {
@@ -9827,39 +9828,15 @@ var realPost = function realPost(request, interfaceName, token, hideLoading, hid
               showFaile('token保存失败!');
             });
           }
-
-          // 再判rc内部
-          var data = res.data;
-          if (data.rc == _success) {
-            if (data.token) {
-              _commonFunction.default.saveStorage(_storageConfig.default.tokenStorage, data.token).
-              then(function () {
-                resolve(res.data);
-              }).catch(function () {
-                reject('token保存失败!');
-                if (!hideError)
-                showFaile('token保存失败!');
-              });
-            } else {
-              resolve(res.data);
-            }
-          } else {
-            if (data.rc == tokenError) {
-              _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
-            }
-            reject(data);
-            if (!hideError)
-            showFaile(data.rcDetail);
-          }
+          resolve(res.data);
         } else
         {
-          if (res.code == tokenError) {
+          if (res.success == false) {
             _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
           }
           reject(res.message);
           if (!hideError)
           showFaile(res.message);
-
         }
       },
       fail: function fail(res) {
@@ -9899,7 +9876,7 @@ var realGet = function realGet(request, interfaceName, token, hideLoading, hideE
         res = res.data;
         console.log("response:----" + JSON.stringify(res));
         uni.hideLoading();
-        if (res.code == _success) {
+        if (res.success == true) {
           if (res.token) {
             _commonFunction.default.saveStorage(_storageConfig.default.tokenStorage, res.token).
             then(function () {
@@ -9910,39 +9887,15 @@ var realGet = function realGet(request, interfaceName, token, hideLoading, hideE
               showFaile('token保存失败!');
             });
           }
-
-          // 再判rc内部
-          var data = res.data;
-          if (data.rc == _success) {
-            if (data.token) {
-              _commonFunction.default.saveStorage(_storageConfig.default.tokenStorage, data.token).
-              then(function () {
-                resolve(res.data);
-              }).catch(function () {
-                reject('token保存失败!');
-                if (!hideError)
-                showFaile('token保存失败!');
-              });
-            } else {
-              resolve(res.data);
-            }
-          } else {
-            if (data.rc == tokenError) {
-              _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
-            }
-            reject(data);
-            if (!hideError)
-            showFaile(data.rcDetail);
-          }
+          resolve(res.data);
         } else
         {
-          if (res.code == tokenError) {
+          if (res.success == false) {
             _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
           }
           reject(res.message);
           if (!hideError)
           showFaile(res.message);
-
         }
       },
       fail: function fail(res) {
@@ -9955,93 +9908,6 @@ var realGet = function realGet(request, interfaceName, token, hideLoading, hideE
 
   });
 };
-/**
-    * param interface 接口名
-    * param request  请求体
-    * param token token
-    * param hideLoading 是否隐藏loading ios如果下拉和loading均存在时，会造成首次下拉回弹超过标题！
-    */
-var realGetParams = function realGetParams(request, interfaceName, token, hideLoading, hideError) {
-
-  return new Promise(function (resolve, reject) {
-    if (token)
-    request.token = token;
-    console.log("request：------" + JSON.stringify(request));
-    console.log("request url:------" + _httpConfig.default.requestUrl + interfaceName);
-    if (!hideLoading) {
-      uni.showLoading({
-        title: loadingTitle,
-        mask: true });
-
-    }
-    uni.request({
-      url: _httpConfig.default.requestUrl + interfaceName,
-      data: request,
-      method: 'GET',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' //自定义请求头信息
-      },
-      success: function success(res) {
-        res = res.data;
-        console.log("response:----" + JSON.stringify(res));
-        uni.hideLoading();
-        if (res.code == _success) {
-          if (res.token) {
-            _commonFunction.default.saveStorage(_storageConfig.default.tokenStorage, res.token).
-            then(function () {
-              resolve(res.data);
-            }).catch(function () {
-              reject('token保存失败!');
-              if (!hideError)
-              showFaile('token保存失败!');
-            });
-          }
-
-          // 再判rc内部
-          var data = res.data;
-          if (data.rc == _success) {
-            if (data.token) {
-              _commonFunction.default.saveStorage(_storageConfig.default.tokenStorage, data.token).
-              then(function () {
-                resolve(res.data);
-              }).catch(function () {
-                reject('token保存失败!');
-                if (!hideError)
-                showFaile('token保存失败!');
-              });
-            } else {
-              resolve(res.data);
-            }
-          } else {
-            if (data.rc == tokenError) {
-              _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
-            }
-            reject(data);
-            if (!hideError)
-            showFaile(data.rcDetail);
-          }
-        } else
-        {
-          if (res.code == tokenError) {
-            _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
-          }
-          reject(res.message);
-          if (!hideError)
-          showFaile(res.message);
-
-        }
-      },
-      fail: function fail(res) {
-        console.log("response网络异常:----" + JSON.stringify(res));
-        uni.hideLoading();
-        reject('网络异常!');
-        showFaile('网络异常!');
-      } });
-
-
-  });
-};
-
 /**
     * param interface 接口名
     * param request  请求体
@@ -10071,7 +9937,7 @@ var realPostParams = function realPostParams(request, interfaceName, token, hide
         res = res.data;
         console.log("response:----" + JSON.stringify(res));
         uni.hideLoading();
-        if (res.code == _success) {
+        if (res.success == true) {
           if (res.token) {
             _commonFunction.default.saveStorage(_storageConfig.default.tokenStorage, res.token).
             then(function () {
@@ -10082,33 +9948,73 @@ var realPostParams = function realPostParams(request, interfaceName, token, hide
               showFaile('token保存失败!');
             });
           }
-
-          // 再判rc内部
-          var data = res.data;
-          if (data.rc == _success) {
-            if (data.token) {
-              _commonFunction.default.saveStorage(_storageConfig.default.tokenStorage, data.token).
-              then(function () {
-                resolve(res.data);
-              }).catch(function () {
-                reject('token保存失败!');
-                if (!hideError)
-                showFaile('token保存失败!');
-              });
-            } else {
-              resolve(res.data);
-            }
-          } else {
-            if (data.rc == tokenError) {
-              _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
-            }
-            reject(data);
-            if (!hideError)
-            showFaile(data.rcDetail);
-          }
+          resolve(res.data);
         } else
         {
-          if (res.code == tokenError) {
+          if (res.success == false) {
+            _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
+          }
+          reject(res.message);
+          if (!hideError)
+          showFaile(res.message);
+
+        }
+      },
+      fail: function fail(res) {
+        console.log("response网络异常:----" + JSON.stringify(res));
+        uni.hideLoading();
+        reject('网络异常!');
+        showFaile('网络异常!');
+      } });
+
+
+  });
+};
+
+/**
+    * param interface 接口名
+    * param request  请求体
+    * param token token
+    * param hideLoading 是否隐藏loading ios如果下拉和loading均存在时，会造成首次下拉回弹超过标题！
+    */
+var realGetParams = function realGetParams(request, interfaceName, token, hideLoading, hideError) {
+  return new Promise(function (resolve, reject) {
+    if (token)
+    request.token = token;
+    console.log("request：------" + JSON.stringify(request));
+    console.log("request url:------" + _httpConfig.default.requestUrl + interfaceName);
+    if (!hideLoading) {
+      uni.showLoading({
+        title: loadingTitle,
+        mask: true });
+
+    }
+    uni.request({
+      url: _httpConfig.default.requestUrl + interfaceName,
+      data: request,
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' //自定义请求头信息
+      },
+      success: function success(res) {
+        res = res.data;
+        console.log("response:----" + JSON.stringify(res));
+        uni.hideLoading();
+        if (res.success == true) {
+          if (res.token) {
+            _commonFunction.default.saveStorage(_storageConfig.default.tokenStorage, res.token).
+            then(function () {
+              resolve(res.data);
+            }).catch(function () {
+              reject('token保存失败!');
+              if (!hideError)
+              showFaile('token保存失败!');
+            });
+          }
+          resolve(res.data);
+        } else
+        {
+          if (res.success == false) {
             _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
           }
           reject(res.message);

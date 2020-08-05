@@ -1,6 +1,18 @@
 {
   "pages": [
-    "pages/home/home"
+    "pages/home/home",
+    "pages/user/user",
+    "pages/user/usercreate",
+    "pages/user/userupdate",
+    "pages/user/userrecord",
+    "pages/location/location",
+    "pages/location/locationcreate",
+    "pages/location/locationupdate",
+    "pages/location/locationrecord",
+    "pages/thing/thing",
+    "pages/thing/thingcreate",
+    "pages/thing/thingupdate",
+    "pages/thing/thingrecord"
   ],
   "subPackages": [],
   "window": {

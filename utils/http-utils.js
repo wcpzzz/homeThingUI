@@ -92,7 +92,7 @@ const realPost=(request,interfaceName,token,hideLoading,hideError)=>{
 					res=res.data;
 					console.log("response:----"+JSON.stringify(res))
 					uni.hideLoading();
-					if(res.code==success){
+					if(res.success==true){
 						if(res.token){
 							commonFuntcion.saveStorage(storageConfig.tokenStorage,res.token)
 							.then(()=>{
@@ -103,39 +103,15 @@ const realPost=(request,interfaceName,token,hideLoading,hideError)=>{
 								showFaile('token保存失败!')
 							})
 						}
-
-						// 再判rc内部
-						var data=res.data;
-						if(data.rc==success){
-							if(data.token){
-								commonFuntcion.saveStorage(storageConfig.tokenStorage,data.token)
-								.then(()=>{
-									resolve(res.data);
-								}).catch(()=>{
-									reject('token保存失败!')
-									if(!hideError)
-									showFaile('token保存失败!')
-								})
-							}else{
-								resolve(res.data);
-							}
-						}else{
-							if(data.rc==tokenError){
-								commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
-							}
-							reject(data);
-							if(!hideError)
-							showFaile(data.rcDetail)
-						}
+						resolve(res.data)
 					}
 					else{
-						if(res.code==tokenError){
+						if(res.success==false){
 							commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
 						}
 						reject(res.message)
 						if(!hideError)
 						showFaile(res.message)
-
 					}
 				},
 				fail(res) {
@@ -175,7 +151,7 @@ const realGet=(request,interfaceName,token,hideLoading,hideError)=>{
 					res=res.data;
 					console.log("response:----"+JSON.stringify(res))
 					uni.hideLoading();
-					if(res.code==success){
+					if(res.success==true){
 						if(res.token){
 							commonFuntcion.saveStorage(storageConfig.tokenStorage,res.token)
 								.then(()=>{
@@ -186,39 +162,15 @@ const realGet=(request,interfaceName,token,hideLoading,hideError)=>{
 									showFaile('token保存失败!')
 							})
 						}
-
-						// 再判rc内部
-						var data=res.data;
-						if(data.rc==success){
-							if(data.token){
-								commonFuntcion.saveStorage(storageConfig.tokenStorage,data.token)
-									.then(()=>{
-										resolve(res.data);
-									}).catch(()=>{
-									reject('token保存失败!')
-									if(!hideError)
-										showFaile('token保存失败!')
-								})
-							}else{
-								resolve(res.data);
-							}
-						}else{
-							if(data.rc==tokenError){
-								commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
-							}
-							reject(data);
-							if(!hideError)
-								showFaile(data.rcDetail)
-						}
+						resolve(res.data)
 					}
 					else{
-						if(res.code==tokenError){
+						if(res.success==false){
 							commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
 						}
 						reject(res.message)
 						if(!hideError)
 							showFaile(res.message)
-
 					}
 				},
 				fail(res) {
@@ -237,8 +189,7 @@ const realGet=(request,interfaceName,token,hideLoading,hideError)=>{
  * param token token
  * param hideLoading 是否隐藏loading ios如果下拉和loading均存在时，会造成首次下拉回弹超过标题！
  */
-const realGetParams=(request,interfaceName,token,hideLoading,hideError)=>{
-	
+const realPostParams=(request,interfaceName,token,hideLoading,hideError)=>{
 	return new Promise((resolve,reject)=>{
 		if(token)
 			request.token=token;
@@ -253,7 +204,7 @@ const realGetParams=(request,interfaceName,token,hideLoading,hideError)=>{
 		uni.request({
 				url:httpConfig.requestUrl+interfaceName,
 				data:request,
-				method: 'GET',
+				method: 'POST',
 				header: {
 					'content-type': 'application/x-www-form-urlencoded' //自定义请求头信息
 				},
@@ -261,7 +212,7 @@ const realGetParams=(request,interfaceName,token,hideLoading,hideError)=>{
 					res=res.data;
 					console.log("response:----"+JSON.stringify(res))
 					uni.hideLoading();
-					if(res.code==success){
+					if(res.success==true){
 						if(res.token){
 							commonFuntcion.saveStorage(storageConfig.tokenStorage,res.token)
 								.then(()=>{
@@ -272,33 +223,10 @@ const realGetParams=(request,interfaceName,token,hideLoading,hideError)=>{
 									showFaile('token保存失败!')
 							})
 						}
-
-						// 再判rc内部
-						var data=res.data;
-						if(data.rc==success){
-							if(data.token){
-								commonFuntcion.saveStorage(storageConfig.tokenStorage,data.token)
-									.then(()=>{
-										resolve(res.data);
-									}).catch(()=>{
-									reject('token保存失败!')
-									if(!hideError)
-										showFaile('token保存失败!')
-								})
-							}else{
-								resolve(res.data);
-							}
-						}else{
-							if(data.rc==tokenError){
-								commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
-							}
-							reject(data);
-							if(!hideError)
-								showFaile(data.rcDetail)
-						}
+						resolve(res.data)
 					}
 					else{
-						if(res.code==tokenError){
+						if(res.success==false){
 							commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
 						}
 						reject(res.message)
@@ -324,7 +252,7 @@ const realGetParams=(request,interfaceName,token,hideLoading,hideError)=>{
  * param token token
  * param hideLoading 是否隐藏loading ios如果下拉和loading均存在时，会造成首次下拉回弹超过标题！
  */
-const realPostParams=(request,interfaceName,token,hideLoading,hideError)=>{
+const realGetParams=(request,interfaceName,token,hideLoading,hideError)=>{
 	return new Promise((resolve,reject)=>{
 			if(token)
 				request.token=token;
@@ -339,7 +267,7 @@ const realPostParams=(request,interfaceName,token,hideLoading,hideError)=>{
 			uni.request({
 				url:httpConfig.requestUrl+interfaceName,
 				data:request,
-				method: 'POST',
+				method: 'GET',
 				header: {
 				        'content-type': 'application/x-www-form-urlencoded' //自定义请求头信息
 				    },
@@ -347,7 +275,7 @@ const realPostParams=(request,interfaceName,token,hideLoading,hideError)=>{
 					res=res.data;
 					console.log("response:----"+JSON.stringify(res))
 					uni.hideLoading();
-					if(res.code==success){
+					if(res.success==true){
 						if(res.token){
 							commonFuntcion.saveStorage(storageConfig.tokenStorage,res.token)
 							.then(()=>{
@@ -358,33 +286,10 @@ const realPostParams=(request,interfaceName,token,hideLoading,hideError)=>{
 								showFaile('token保存失败!')
 							})
 						}
-
-						// 再判rc内部
-						var data=res.data;
-						if(data.rc==success){
-							if(data.token){
-								commonFuntcion.saveStorage(storageConfig.tokenStorage,data.token)
-								.then(()=>{
-									resolve(res.data);
-								}).catch(()=>{
-									reject('token保存失败!')
-									if(!hideError)
-									showFaile('token保存失败!')
-								})
-							}else{
-								resolve(res.data);
-							}
-						}else{
-							if(data.rc==tokenError){
-								commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
-							}
-							reject(data);
-							if(!hideError)
-							showFaile(data.rcDetail)
-						}
+						resolve(res.data)
 					}
 					else{
-						if(res.code==tokenError){
+						if(res.success==false){
 							commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
 						}
 						reject(res.message)

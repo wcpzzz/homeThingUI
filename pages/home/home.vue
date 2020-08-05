@@ -4,20 +4,20 @@
             家庭物品管理
         </view>
         <view class="functionList" style="margin-bottom: 10px">
-            <view class="functionitem">
+            <view class="functionitem" @click="toPage('/pages/thing/thing')">
                 <!--        前往物品列表-->
                 <view class="icons cuIcon-goodsfill">
                 </view>
                 <view>物品管理</view>
             </view>
             <!--        前往成员列表-->
-            <view class="functionitem">
+            <view class="functionitem"  @click="toPage('/pages/user/user')">
                 <view class="icons cuIcon-peoplefill">
                 </view>
                 <view>成员管理</view>
             </view>
             <!--        前往仓库列表-->
-            <view class="functionitem">
+            <view class="functionitem" @click="toPage('/pages/location/location')">
                 <view class="icons cuIcon-homefill">
                 </view>
                 <view>仓库管理</view>
@@ -28,14 +28,14 @@
                 <view class="cu-bar search">
                     <view class="search-form round">
                         <text class="cuIcon-search "></text>
-                        <input type="text" placeholder="物品查询" confirm-type="search" @input="searchIconThing"></input>
+                        <input type="text" placeholder="物品查询,输入【。】可查询全部" confirm-type="search" @input="searchIconThing"></input>
                     </view>
                 </view>
             </view>
             <view>物品列表</view>
-            <view class="cu-form-group">
-                <view class="title">1234</view>
-                <view class="content">23435</view>
+            <view class="cu-form-group" v-for="(item,index) in itemsListThing" :key="index">
+                <view class="title">{{item.thingName}}</view>
+                <view class="content">{{item.statusName}}</view>
                 <sanjiao></sanjiao>
             </view>
         </view>
@@ -44,14 +44,14 @@
                 <view class="cu-bar search ">
                     <view class="search-form round">
                         <text class="cuIcon-search"></text>
-                        <input type="text" placeholder="成员查询" confirm-type="search" @input="searchIconUser"></input>
+                        <input type="text" placeholder="成员查询,输入【。】可查询全部" confirm-type="search" @input="searchIconUser"></input>
                     </view>
                 </view>
             </view>
             <view>成员列表</view>
-            <view class="cu-form-group">
-                <view class="title">1234</view>
-                <view class="content">23435</view>
+            <view class="cu-form-group" v-for="(item,index) in itemsListUser2" :key="index">
+                <view class="title">{{item.userName}}</view>
+                <view class="content">{{item.mobile}}</view>
                 <sanjiao></sanjiao>
             </view>
         </view>
@@ -60,23 +60,26 @@
                 <view class="cu-bar search">
                     <view class="search-form round">
                         <text class="cuIcon-search"></text>
-                        <input type="text" placeholder="仓库查询" confirm-type="search" @input="searchIconLocation"></input>
+                        <input type="text" placeholder="仓库查询,输入【。】可查询全部" confirm-type="search" @input="searchIconLocation"></input>
                     </view>
                 </view>
             </view>
             <view>仓库列表</view>
-            <view class="cu-form-group">
-                <view class="title">1234</view>
-                <view class="content">23435</view>
+            <view class="cu-form-group" v-for="(item,index) in itemsListLocation" :key="index">
+                <view class="title">{{item.locationName}}</view>
+<!--                <view class="content">{{item.locationName}}</view>-->
                 <sanjiao></sanjiao>
             </view>
+        </view>
+        <view>
+            <img>
         </view>
         <c-notify ref='notify'></c-notify>
     </view>
 </template>
 
 <script>
-    import {findListThing,findListUser2,findListLocation} from '@/common/api.js'
+    import {findListThing, findListUser2, findListLocation} from '@/common/api.js'
 
     export default {
         data() {
@@ -88,13 +91,28 @@
         },
         methods: {
             searchIconThing(e) {
-                this.findListThing(e.detail.value)
+                if (e.detail.value) {
+                    this.findListThing(e.detail.value)
+                }
+                if (e.detail.value=="。") {
+                    this.findListThing()
+                }
             },
             searchIconUser(e) {
-                this.findListUser2(e.detail.value)
+                if (e.detail.value) {
+                    this.findListUser2(e.detail.value)
+                }
+                if (e.detail.value=="。") {
+                    this.findListUser2()
+                }
             },
             searchIconLocation(e) {
-                this.findListLocation(e.detail.value)
+                if (e.detail.value) {
+                    this.findListLocation(e.detail.value)
+                }
+                if (e.detail.value=="。") {
+                    this.findListLocation()
+                }
             },
             toPage(path) {
                 this.COMMONFUNCTION.toPage(path)
@@ -106,30 +124,51 @@
             findListThing(item) {
                 let request = {};
                 request.thingName = item
-                findListThing(request).then((res)=>{
-                    this.itemsListThing = res.data
-                }).catch((err)=>{
-                    console.log('findListThing'+err)
+                findListThing(request).then((res) => {
+                    this.itemsListThing = res.filter(item => {
+                        // 物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）
+                        switch (item.thingStatus) {
+                            case 1:
+                                item.statusName = "正常";
+                                break;
+                            case 2:
+                                item.statusName = "待找寻";
+                                break;
+                            case 3:
+                                item.statusName = "待补充";
+                                break;
+                            case 4:
+                                item.statusName = "待遗弃";
+                                break;
+                            case 5:
+                                item.statusName = "待维修";
+                                break;
+                        }
+                        return true
+                    })
+                }).catch((err) => {
+                    console.log('findListThing' + err)
                 })
             },
             // 成员搜索
             findListUser2(item) {
                 let request = {};
-                request.user2Name = item
-                findListUser2(request).then((res)=>{
-                    this.findListUser2 = res.data
-                }).catch((err)=>{
-                    console.log('findListUser2'+err)
+                request.userName = item
+                findListUser2(request).then((res) => {
+                    this.itemsListUser2 = res
+                    console.log('findListUser2' + JSON.stringify(this.itemsListUser2))
+                }).catch((err) => {
+                    console.log('findListUser2' + err)
                 })
             },
             // 仓库搜索
             findListLocation(item) {
                 let request = {};
                 request.locationName = item
-                findListLocation(request).then((res)=>{
-                    this.findListLocation = res.data
-                }).catch((err)=>{
-                    console.log('findListLocation'+err)
+                findListLocation(request).then((res) => {
+                    this.itemsListLocation = res
+                }).catch((err) => {
+                    console.log('findListLocation' + err)
                 })
             }
         },
@@ -161,7 +200,7 @@
         height: 100vh !important;
         padding: 0 10px;
         white-space: pre-wrap; /*空格*/
-        /*background-color: #242424;*/
+        /**/
     }
 
     .functionList {
@@ -177,7 +216,8 @@
 
         }
     }
-    .search-out{
+
+    .search-out {
         margin-bottom: 10px;
     }
 

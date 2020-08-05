@@ -348,6 +348,7 @@ export const findListUser2 = (item) => {
         let request = {};
         request = item;
         httpUtils.post(request, httpConfig.interfaces.findListUser2).then((response) => {
+
             resolve(response);
         }).catch((res) => {
             reject(res);

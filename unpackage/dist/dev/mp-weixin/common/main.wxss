@@ -3532,7 +3532,7 @@ scroll-view.cu-steps .cu-item {
 	color: #ffffff;
 }
 .bg-base {
-	background-color: #242424;
+
 	color: #ffffff;
 }
 .bg-base2 {
@@ -5212,6 +5212,38 @@ scroll-view.cu-steps .cu-item {
         -webkit-transform: translateX(0);
                 transform: translateX(0)
 }
+} 
+/*底部双按钮*/
+.wcpzzzfoot {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    height: 7%;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+    font-size: 15px;
 }
-
+.wcpzzzfoot .wcpzzzbtn-bottom {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+            flex: 1;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+    height: 100%;
+    font-size: 22px;
+}
 
