@@ -1,11 +1,18 @@
 <template>
     <view class="page">
-        <!--        地点查询，
-                种类查询，
-                所有者查询，
-                状态查询，（多条件）
-                查询完了，跳转到物品修改，
-                可跳至新建物品页面，-->
+        <!--
+        {
+  "creater": "string",
+  "id": 0,
+  "master": "string",
+  "owner": "string",
+  "thingMoney": 0,
+  "thingName": "string",
+  "thingNum": 0,
+  "thingStatus": "string"
+}
+
+        -->
         <view>
             <!--            这里放一堆地点tag-->
             <view class='cu-tag round text-white bg-blue' v-for="(item,index) in itemsListLocation" :key="index">

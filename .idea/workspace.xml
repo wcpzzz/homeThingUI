@@ -2,30 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d8e760-096f-466b-85a6-275868b54474" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/colorui/wcpzzz.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/location/location.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/location/locationcreate.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/location/locationrecord.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/thing/thing.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/thing/thingcreate.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/thing/thingrecord.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/user/user.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/user/usercreate.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/user/userrecord.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/apinew.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colorui/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/colorui/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/http-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/http-config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/components/feedback/nofity.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/components/feedback/nofity.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/main.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/main.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/http-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/http-utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/thing/thingcreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/thing/thingcreate.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/common" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -70,15 +52,15 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Downloads\yinshishixi\homeThingUI\common" />
+      <recent name="C:\Users\Administrator\Downloads\yinshishixi\homeThingUI\pages\user" />
+      <recent name="C:\Users\Administrator\Downloads\yinshishixi\homeThingUI\pages\thing" />
+      <recent name="C:\Users\Administrator\Downloads\yinshishixi\homeThingUI\pages\location" />
       <recent name="C:\Users\Administrator\Downloads\yinshishixi\homeThingUI\pages" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Downloads\yinshishixi\homeThingUI\pages\user" />
-      <recent name="C:\Users\Administrator\Downloads\yinshishixi\homeThingUI\pages\location" />
-      <recent name="C:\Users\Administrator\Downloads\yinshishixi\homeThingUI\pages\thing" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Downloads\yinshishixi\homeThingUI\pages" />
-      <recent name="C:\Users\Administrator\Downloads\yinshishixi\homeThingUI\components" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -114,7 +96,8 @@
       <workItem from="1596009064698" duration="2366000" />
       <workItem from="1596159600154" duration="593000" />
       <workItem from="1596160832653" duration="1198000" />
-      <workItem from="1596416098202" duration="20386000" />
+      <workItem from="1596416098202" duration="25002000" />
+      <workItem from="1596692896254" duration="5380000" />
     </task>
     <task id="LOCAL-00001" summary="7.20">
       <created>1595219379137</created>
@@ -137,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595827786865</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="8.5">
+      <created>1596595551680</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1596595551680</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +137,8 @@
     <MESSAGE value="7.20" />
     <MESSAGE value="7.21" />
     <MESSAGE value="7.27" />
-    <option name="LAST_COMMIT_MESSAGE" value="7.27" />
+    <MESSAGE value="8.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="8.5" />
   </component>
   <component name="WindowStateProjectService">
     <state x="492" y="216" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596594916335">
@@ -158,10 +149,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="410" y="179" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1536.824@0.0.1536.824" timestamp="1596519432068" />
-    <state x="339" y="8" key="CommitChangelistDialog2" timestamp="1596595523695">
+    <state x="339" y="8" key="CommitChangelistDialog2" timestamp="1596595550271">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="339" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596595523695" />
+    <state x="339" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596595550271" />
     <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1595219345718">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -178,10 +169,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1595219352571" />
-    <state x="447" y="145" width="782" height="600" key="find.popup" timestamp="1596592056070">
+    <state x="447" y="145" width="782" height="600" key="find.popup" timestamp="1596770347030">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="145" width="782" height="600" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1596592056070" />
+    <state x="447" y="145" width="782" height="600" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1596770347030" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1596519163120">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

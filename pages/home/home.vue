@@ -11,7 +11,7 @@
                 <view>物品管理</view>
             </view>
             <!--        前往成员列表-->
-            <view class="functionitem"  @click="toPage('/pages/user/user')">
+            <view class="functionitem" @click="toPage('/pages/user/user')">
                 <view class="icons cuIcon-peoplefill">
                 </view>
                 <view>成员管理</view>
@@ -28,7 +28,8 @@
                 <view class="cu-bar search">
                     <view class="search-form round">
                         <text class="cuIcon-search "></text>
-                        <input type="text" placeholder="物品查询,输入【。】可查询全部" confirm-type="search" @input="searchIconThing"></input>
+                        <input type="text" placeholder="物品查询,输入【。】可查询全部" confirm-type="search"
+                               @input="searchIconThing"></input>
                     </view>
                 </view>
             </view>
@@ -44,7 +45,8 @@
                 <view class="cu-bar search ">
                     <view class="search-form round">
                         <text class="cuIcon-search"></text>
-                        <input type="text" placeholder="成员查询,输入【。】可查询全部" confirm-type="search" @input="searchIconUser"></input>
+                        <input type="text" placeholder="成员查询,输入【。】可查询全部" confirm-type="search"
+                               @input="searchIconUser"></input>
                     </view>
                 </view>
             </view>
@@ -60,14 +62,15 @@
                 <view class="cu-bar search">
                     <view class="search-form round">
                         <text class="cuIcon-search"></text>
-                        <input type="text" placeholder="仓库查询,输入【。】可查询全部" confirm-type="search" @input="searchIconLocation"></input>
+                        <input type="text" placeholder="仓库查询,输入【。】可查询全部" confirm-type="search"
+                               @input="searchIconLocation"></input>
                     </view>
                 </view>
             </view>
             <view>仓库列表</view>
             <view class="cu-form-group" v-for="(item,index) in itemsListLocation" :key="index">
                 <view class="title">{{item.locationName}}</view>
-<!--                <view class="content">{{item.locationName}}</view>-->
+                <!--                <view class="content">{{item.locationName}}</view>-->
                 <sanjiao></sanjiao>
             </view>
         </view>
@@ -80,6 +83,7 @@
 
 <script>
     import {findListThing, findListUser2, findListLocation} from '@/common/api.js'
+    import {login} from '@/common/apinew.js'
 
     export default {
         data() {
@@ -94,7 +98,7 @@
                 if (e.detail.value) {
                     this.findListThing(e.detail.value)
                 }
-                if (e.detail.value=="。") {
+                if (e.detail.value == "。") {
                     this.findListThing()
                 }
             },
@@ -102,7 +106,7 @@
                 if (e.detail.value) {
                     this.findListUser2(e.detail.value)
                 }
-                if (e.detail.value=="。") {
+                if (e.detail.value == "。") {
                     this.findListUser2()
                 }
             },
@@ -110,7 +114,7 @@
                 if (e.detail.value) {
                     this.findListLocation(e.detail.value)
                 }
-                if (e.detail.value=="。") {
+                if (e.detail.value == "。") {
                     this.findListLocation()
                 }
             },
@@ -177,7 +181,15 @@
         },
         filters: {},
         onLoad() {
-
+            //用户登录，获取token
+            var request =
+                {
+                    mobile: "13212527652",
+                    userName: "魏晨鹏"
+                }
+            login(request).then(res => {
+                console.log(res.data)
+            })
         },
         onShow() {
 

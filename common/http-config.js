@@ -115,21 +115,10 @@ const interfaces={
 	findListUser2:'user2/findList',
 	updateByIdUser2:'user2/updateById',
 	deleteUser2:'user2/delete',//getParams
-
-
-	/*
-	:'',
-	create: '/create',
-	page:'/page',
-	findOne:'/findOne',
-	findList:'/findList',
-	updateById:'/updateById',
-	delete:'/delete',
-	*/
-	login:'/cust/custLogin',
-	regist:'/cust/custRegister',
 }
-
+const interfacesnew={
+	login: 'user2/login'
+}
 export default{
 	ossAC_headPhoto,
 	ossAC_brandLogo,
@@ -143,6 +132,7 @@ export default{
 	defaultStartDate,
 	requestUrl,
 	interfaces,
+	interfacesnew,
 	cantGetCard,
 	unRegist,
 	version,
