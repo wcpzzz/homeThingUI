@@ -6,7 +6,7 @@ export const login = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
-        httpUtils.post(request, httpConfig.interfacesnew.login).then((response) => {
+        httpUtils.realPost(request, httpConfig.interfacesnew.login).then((response) => {
             resolve(response);
         }).catch((res) => {
             reject(res);
