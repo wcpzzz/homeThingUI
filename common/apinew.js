@@ -17,7 +17,7 @@ const findListThingWithThingtypeWithUserWithLocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
-        httpUtils.realPost(request, httpConfig.interfacesnew.findListThingWithThingtypeWithUserWithLocation).then((response) => {
+        httpUtils.post(request, httpConfig.interfacesnew.findListThingWithThingtypeWithUserWithLocation).then((response) => {
             resolve(response);
         }).catch((res) => {
             reject(res);
@@ -28,7 +28,7 @@ const findListWithUser = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
-        httpUtils.realPost(request, httpConfig.interfacesnew.findListWithUser).then((response) => {
+        httpUtils.post(request, httpConfig.interfacesnew.findListWithUser).then((response) => {
             resolve(response);
         }).catch((res) => {
             reject(res);
