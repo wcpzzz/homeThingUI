@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="37d8e760-096f-466b-85a6-275868b54474" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/apinew.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/apinew.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/http-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/http-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/home.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +100,7 @@
       <workItem from="1597021039234" duration="31944000" />
       <workItem from="1597971477939" duration="8962000" />
       <workItem from="1598229723766" duration="5779000" />
-      <workItem from="1598424084986" duration="11787000" />
+      <workItem from="1598424084986" duration="15999000" />
     </task>
     <task id="LOCAL-00001" summary="7.20">
       <created>1595219379137</created>
@@ -141,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598844235457</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="8.31">
+      <created>1598858068276</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1598858068276</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,10 +175,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="410" y="179" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1536.824@0.0.1536.824" timestamp="1596519432068" />
-    <state x="339" y="8" key="CommitChangelistDialog2" timestamp="1598844233662">
+    <state x="339" y="8" key="CommitChangelistDialog2" timestamp="1598858067130">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="339" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598844233662" />
+    <state x="339" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598858067130" />
     <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1595219345718">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -177,18 +187,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="514" y="123" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1595554019372" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1598844242455">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1598858073248">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598844242455" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598858073248" />
     <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597291454959">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1597291454959" />
-    <state x="447" y="145" width="782" height="600" key="find.popup" timestamp="1598857662707">
+    <state x="447" y="145" width="782" height="600" key="find.popup" timestamp="1598858360161">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="145" width="782" height="600" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1598857662707" />
+    <state x="447" y="145" width="782" height="600" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1598858360161" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1598248173303">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

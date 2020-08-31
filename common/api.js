@@ -278,55 +278,55 @@ const updateByIdThingtype = (item) => {
         })
     })
 }
-const createUser2 = (item) => {
+const createUser = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
-        httpUtils.post(request, httpConfig.interfaces.createUser2).then((response) => {
+        httpUtils.post(request, httpConfig.interfaces.createUser).then((response) => {
             resolve(response);
         }).catch((res) => {
             reject(res);
         })
     })
 }
-const pageUser2 = (item) => {
+const pageUser = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
-        httpUtils.post(request, httpConfig.interfaces.pageUser2).then((response) => {
+        httpUtils.post(request, httpConfig.interfaces.pageUser).then((response) => {
             resolve(response);
         }).catch((res) => {
             reject(res);
         })
     })
 }
-const findOneUser2 = (item) => {
+const findOneUser = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
-        httpUtils.post(request, httpConfig.interfaces.findOneUser2).then((response) => {
+        httpUtils.post(request, httpConfig.interfaces.findOneUser).then((response) => {
             resolve(response);
         }).catch((res) => {
             reject(res);
         })
     })
 }
-const findListUser2 = (item) => {
+const findListUser = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
-        httpUtils.post(request, httpConfig.interfaces.findListUser2).then((response) => {
+        httpUtils.post(request, httpConfig.interfaces.findListUser).then((response) => {
             resolve(response);
         }).catch((res) => {
             reject(res);
         })
     })
 }
-const updateByIdUser2 = (item) => {
+const updateByIdUser = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
-        httpUtils.post(request, httpConfig.interfaces.updateByIdUser2).then((response) => {
+        httpUtils.post(request, httpConfig.interfaces.updateByIdUser).then((response) => {
             resolve(response);
         }).catch((res) => {
             reject(res);
@@ -444,22 +444,22 @@ const deleteThingtype = (item) => {
         })
     })
 }
-const user2 = (item) => {
+const user = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
-        httpUtils.getParams(request, httpConfig.interfaces.user2).then((response) => {
+        httpUtils.getParams(request, httpConfig.interfaces.user).then((response) => {
             resolve(response);
         }).catch((res) => {
             reject(res);
         })
     })
 }
-const deleteUser2 = (item) => {
+const deleteUser = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
-        httpUtils.getParams(request, httpConfig.interfaces.deleteUser2).then((response) => {
+        httpUtils.getParams(request, httpConfig.interfaces.deleteUser).then((response) => {
             resolve(response);
         }).catch((res) => {
             reject(res);
@@ -503,11 +503,11 @@ export default {
     findListThingtype,
     updateByIdThingtype,
     deleteThingtype,
-    user2,
-    createUser2,
-    pageUser2,
-    findOneUser2,
-    findListUser2,
-    updateByIdUser2,
-    deleteUser2
+    user,
+    createUser,
+    pageUser,
+    findOneUser,
+    findListUser,
+    updateByIdUser,
+    deleteUser
 }

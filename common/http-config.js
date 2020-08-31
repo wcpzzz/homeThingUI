@@ -62,7 +62,10 @@ const interfaces={
 const interfacesnew = {
 	login: 'user/login',
 	findListThingWithThingtypeWithUserWithLocation: 'thing/findListThingWithThingtypeWithUserWithLocation',
-	findListWithUser:'thing/findListWithUser',
+	findListThingWithUser:'thing/findListThingWithUser',
+	findListLocationWithUser:'location/findListLocationWithUser',
+	findListUser:'user/findListUser',
+	findListThingtypeWithUser:'thingtype/findListThingtypeWithUser',
 };
 export default{
 	interfacesnew,

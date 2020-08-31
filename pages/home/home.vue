@@ -33,12 +33,22 @@
                     </view>
                 </view>
             </view>
-            <view>物品列表</view>
-            <view class="cu-form-group" v-for="(item,index) in itemsListThing" :key="index">
-                <view class="title">{{item.thingName}}</view>
-                <view class="content">{{item.statusName}}</view>
-                <sanjiao></sanjiao>
-            </view>
+            <block v-if="itemsListThing.length>0">
+                <view>物品列表</view>
+                <view class="cu-form-group" v-for="(item,index) in itemsListThing" :key="index">
+                    <view>名称：{{item.thingName}}</view>
+                    <view>地点：
+                        <text v-for="(item2,index2) in item.thingLocationList" :key="index2">
+                            {{item2.locationName}}
+                        </text>
+                        <!--                    <view class="content">{{item.thingStatus}}</view>-->
+                        <!--                    <view class="title">{{item.thingName}}</view>-->
+                        <!--                    <view class="content">{{item.thingStatus}}</view>-->
+
+                    </view>
+                    <sanjiao></sanjiao>
+                </view>
+            </block>
         </view>
         <view class="search-out">
             <view class="searchinput">
@@ -50,12 +60,14 @@
                     </view>
                 </view>
             </view>
-            <view>成员列表</view>
-            <view class="cu-form-group" v-for="(item,index) in itemsListUser" :key="index">
-                <view class="title">{{item.userName}}</view>
-                <view class="content">{{item.mobile}}</view>
-                <sanjiao></sanjiao>
-            </view>
+            <block v-if="itemsListUser.length>0">
+                <view>成员列表</view>
+                <view class="cu-form-group" v-for="(item,index) in itemsListUser" :key="index">
+                    <view>{{item.userName}}</view>
+                    <view class="content">手机：{{item.userMobile}}</view>
+                    <sanjiao></sanjiao>
+                </view>
+            </block>
         </view>
         <view class="search-out">
             <view class="searchinput">
@@ -67,12 +79,14 @@
                     </view>
                 </view>
             </view>
-            <view>仓库列表</view>
-            <view class="cu-form-group" v-for="(item,index) in itemsListLocation" :key="index">
-                <view class="title">{{item.locationName}}</view>
-                <!--                <view class="content">{{item.locationName}}</view>-->
-                <sanjiao></sanjiao>
-            </view>
+            <block v-if="itemsListLocation.length>0">
+                <view>仓库列表</view>
+                <view class="cu-form-group" v-for="(item,index) in itemsListLocation" :key="index">
+                    <view>{{item.locationName}}</view>
+                    <!--                <view class="content">{{item.locationName}}</view>-->
+                    <sanjiao></sanjiao>
+                </view>
+            </block>
         </view>
         <view>
             <img>
@@ -96,6 +110,13 @@
             searchIconThing(e) {
                 if (e.detail.value == "。") {
                     this.AUTOAPINEW.findListThingWithThingtypeWithUserWithLocation({}).then((res) => {
+                        // 物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）
+                        this.itemsListThing = res
+                    }).catch((err) => {
+                        console.log('findListThingWithThingtypeWithUserWithLocation' + err)
+                    })
+                } else if (e.detail.value) {
+                    this.AUTOAPINEW.findListThingWithThingtypeWithUserWithLocation({'thingName': e.detail.value}).then((res) => {
                         this.itemsListThing = res.filter(item => {
                             // 物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）
                             switch (item.thingStatus) {
@@ -120,32 +141,9 @@
                     }).catch((err) => {
                         console.log('findListThingWithThingtypeWithUserWithLocation' + err)
                     })
-                }else if (e.detail.value) {
-                    this.AUTOAPINEW.findListThingWithThingtypeWithUserWithLocation({'thingName':e.detail.value}).then((res) => {
-                        this.itemsListThing = res.filter(item => {
-                            // 物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）
-                            switch (item.thingStatus) {
-                                case 1:
-                                    item.statusName = "正常";
-                                    break;
-                                case 2:
-                                    item.statusName = "待找寻";
-                                    break;
-                                case 3:
-                                    item.statusName = "待补充";
-                                    break;
-                                case 4:
-                                    item.statusName = "待遗弃";
-                                    break;
-                                case 5:
-                                    item.statusName = "待维修";
-                                    break;
-                            }
-                            return true
-                        })
-                    }).catch((err) => {
-                        console.log('findListThingWithThingtypeWithUserWithLocation' + err)
-                    })
+                } else {
+                    //一个字符都没有的话,就清空
+                    this.itemsListThing = []
                 }
             },
             searchIconUser(e) {
@@ -155,25 +153,33 @@
                     }).catch((err) => {
                         console.log('findListUser' + err)
                     })
-                }else if (e.detail.value) {
-                    this.AUTOAPI.findListUser({'userName':e.detail.value}).then((res) => {
+                } else if (e.detail.value) {
+                    this.AUTOAPI.findListUser({'userName': e.detail.value}).then((res) => {
                         this.itemsListUser = res
                     }).catch((err) => {
                         console.log('findListUser' + err)
                     })
+                } else {
+                    //一个字符都没有的话,就清空
+                    this.itemsListUser = []
                 }
             },
             searchIconLocation(e) {
                 if (e.detail.value == "。") {
-                    this.AUTOAPI.findListLocation({}).then((res) => {
+                    this.AUTOAPINEW.findListLocationWithUser({}).then((res) => {
                         this.itemsListLocation = res
                     }).catch((err) => {
-                        console.log('findListLocation' + err)
+                        console.log('findListLocationWithUser' + err)
                     })
-                }else if ({'locationName':e.detail.value}) {
-                    let request = {};
-                    request.locationName = e.detail.value
-                    this.findListLocation(request)
+                } else if (e.detail.value) {
+                    this.AUTOAPINEW.findListLocationWithUser({'locationName': e.detail.value}).then((res) => {
+                        this.itemsListLocation = res
+                    }).catch((err) => {
+                        console.log('findListLocationWithUser' + err)
+                    })
+                } else {
+                    //一个字符都没有的话,就清空
+                    this.itemsListLocation = []
                 }
             },
             toPage(path) {
