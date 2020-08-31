@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#4e5367",
+  "backgroundColorTop": "#4e5367",
+  "navigationBarTitleText": "仓库记录",
+  "usingComponents": {}
+}

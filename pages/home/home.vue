@@ -51,7 +51,7 @@
                 </view>
             </view>
             <view>成员列表</view>
-            <view class="cu-form-group" v-for="(item,index) in itemsListUser2" :key="index">
+            <view class="cu-form-group" v-for="(item,index) in itemsListUser" :key="index">
                 <view class="title">{{item.userName}}</view>
                 <view class="content">{{item.mobile}}</view>
                 <sanjiao></sanjiao>
@@ -82,40 +82,98 @@
 </template>
 
 <script>
-    import {findListThing, findListUser2, findListLocation} from '@/common/api.js'
     import {login} from '@/common/apinew.js'
 
     export default {
         data() {
             return {
                 itemsListThing: [],
-                itemsListUser2: [],
+                itemsListUser: [],
                 itemsListLocation: []
             };
         },
         methods: {
             searchIconThing(e) {
-                if (e.detail.value) {
-                    this.findListThing(e.detail.value)
-                }
                 if (e.detail.value == "。") {
-                    this.findListThing()
+                    this.AUTOAPINEW.findListThingWithThingtypeWithUserWithLocation({}).then((res) => {
+                        this.itemsListThing = res.filter(item => {
+                            // 物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）
+                            switch (item.thingStatus) {
+                                case 1:
+                                    item.statusName = "正常";
+                                    break;
+                                case 2:
+                                    item.statusName = "待找寻";
+                                    break;
+                                case 3:
+                                    item.statusName = "待补充";
+                                    break;
+                                case 4:
+                                    item.statusName = "待遗弃";
+                                    break;
+                                case 5:
+                                    item.statusName = "待维修";
+                                    break;
+                            }
+                            return true
+                        })
+                    }).catch((err) => {
+                        console.log('findListThingWithThingtypeWithUserWithLocation' + err)
+                    })
+                }else if (e.detail.value) {
+                    this.AUTOAPINEW.findListThingWithThingtypeWithUserWithLocation({'thingName':e.detail.value}).then((res) => {
+                        this.itemsListThing = res.filter(item => {
+                            // 物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）
+                            switch (item.thingStatus) {
+                                case 1:
+                                    item.statusName = "正常";
+                                    break;
+                                case 2:
+                                    item.statusName = "待找寻";
+                                    break;
+                                case 3:
+                                    item.statusName = "待补充";
+                                    break;
+                                case 4:
+                                    item.statusName = "待遗弃";
+                                    break;
+                                case 5:
+                                    item.statusName = "待维修";
+                                    break;
+                            }
+                            return true
+                        })
+                    }).catch((err) => {
+                        console.log('findListThingWithThingtypeWithUserWithLocation' + err)
+                    })
                 }
             },
             searchIconUser(e) {
-                if (e.detail.value) {
-                    this.findListUser2(e.detail.value)
-                }
                 if (e.detail.value == "。") {
-                    this.findListUser2()
+                    this.AUTOAPI.findListUser({}).then((res) => {
+                        this.itemsListUser = res
+                    }).catch((err) => {
+                        console.log('findListUser' + err)
+                    })
+                }else if (e.detail.value) {
+                    this.AUTOAPI.findListUser({'userName':e.detail.value}).then((res) => {
+                        this.itemsListUser = res
+                    }).catch((err) => {
+                        console.log('findListUser' + err)
+                    })
                 }
             },
             searchIconLocation(e) {
-                if (e.detail.value) {
-                    this.findListLocation(e.detail.value)
-                }
                 if (e.detail.value == "。") {
-                    this.findListLocation()
+                    this.AUTOAPI.findListLocation({}).then((res) => {
+                        this.itemsListLocation = res
+                    }).catch((err) => {
+                        console.log('findListLocation' + err)
+                    })
+                }else if ({'locationName':e.detail.value}) {
+                    let request = {};
+                    request.locationName = e.detail.value
+                    this.findListLocation(request)
                 }
             },
             toPage(path) {
@@ -124,75 +182,23 @@
             confirm(transId) {
                 console.log('ok')
             },
-            // 物品搜索
-            findListThing(item) {
-                let request = {};
-                request.thingName = item
-                findListThing(request).then((res) => {
-                    this.itemsListThing = res.filter(item => {
-                        // 物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）
-                        switch (item.thingStatus) {
-                            case 1:
-                                item.statusName = "正常";
-                                break;
-                            case 2:
-                                item.statusName = "待找寻";
-                                break;
-                            case 3:
-                                item.statusName = "待补充";
-                                break;
-                            case 4:
-                                item.statusName = "待遗弃";
-                                break;
-                            case 5:
-                                item.statusName = "待维修";
-                                break;
-                        }
-                        return true
-                    })
-                }).catch((err) => {
-                    console.log('findListThing' + err)
-                })
-            },
-            // 成员搜索
-            findListUser2(item) {
-                let request = {};
-                request.userName = item
-                findListUser2(request).then((res) => {
-                    this.itemsListUser2 = res
-                    console.log('findListUser2' + JSON.stringify(this.itemsListUser2))
-                }).catch((err) => {
-                    console.log('findListUser2' + err)
-                })
-            },
-            // 仓库搜索
-            findListLocation(item) {
-                let request = {};
-                request.locationName = item
-                findListLocation(request).then((res) => {
-                    this.itemsListLocation = res
-                }).catch((err) => {
-                    console.log('findListLocation' + err)
-                })
-            }
         },
         computed: {},
         onReachBottom() {
         },
         filters: {},
         onLoad() {
+        },
+        onShow() {
             //用户登录，获取token
             var request =
                 {
-                    mobile: "13212527652",
+                    userMobile: "13212527652",
                     userName: "魏晨鹏"
                 }
-            login(request).then(res => {
+            this.AUTOAPINEW.login(request).then(res => {
                 console.log(res.data)
             })
-        },
-        onShow() {
-
         },
         onShareAppMessage() {
             let share = {

@@ -1,58 +1,148 @@
 <template>
     <view class="page">
-        <!--        上级查询，
-                下级查询，
-                本人查询，（多条件）
-                1、查询完了，跳转到成员详情，拥有role权限的人可以进行修改
-                2、查询完了，跳转到成员管理的物品列表
-                拥有role权限的人可跳至新建成员页面
+        <!--
+        {
+  "creater": "string",
+  "id": 0,
+  "master": "string",
+  "owner": "string",
+  "UserMoney": 0,
+  "UserName": "string",
+  "UserNum": 0,
+  "UserStatus": "string"
+}
         -->
         <view>
-            <!--            这里放一堆上级查询tag-->
-        </view>
-        <view>
-            <!--            这里放一堆下级查询tag-->
-        </view>
-        <view>
-            <!--            这里放一堆状态tag-->
-        </view>
-        <view>
-            <!--            这里放一堆所有者tag-->
-        </view>
-        <view>
-            <!--            这里放搜索框（物品名称）-->
-        </view>
-        <view>
-            <!--            这里展示物品列表-->
-        </view>
-        <view>
-            <!--            这里是底部，放新增和记录按钮-->
-            <!--            记录按时间倒序展示物品变动情况-->
+            <!--            这里放各种输入框-->
 
+            <!--            {
+                        creater	string
+                        创建者
 
+                        id	integer($int32)
+                        master	string
+                        管理者
+
+                        modiTime	string($date-time)
+                        修改时间
+
+                        owner	string
+                        拥有者
+
+                        UserMoney	number($double)
+                        物品价格
+
+                        UserName	string
+                        物品名
+
+                        UserNum	integer($int32)
+                        物品数量
+
+                        UserStatus	string
+                        物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）
+
+                        }-->
+            <view class="cu-form-group">
+                <!--                默认模糊搜索-->
+                <view class="title">用户名</view>
+                <input placeholder="请输入用户名" name="input" v-model="createUserForm.userName"></input>
+            </view>
+            <view class="cu-form-group">
+                <view class="title">手机号</view>
+                <input placeholder="请输入手机号" name="input" v-model="createUserForm.mobile"></input>
+            </view>
+            <view class="cu-form-group">
+                <!--                默认1-->
+                <view class="title">邮箱</view>
+                <input placeholder="请输入邮箱" name="input" v-model="createUserForm.email"></input>
+            </view>
+            <view class="cu-form-group">
+                <!--                默认正常-->
+                <view class="title">角色</view>
+                <input placeholder="角色（1、终极管理员；2、管理员可以加人，改成员，不能改平级管理员；3、成员不能加人）" name="input" v-model="createUserForm.role"></input>
+            </view>
+            <view class="cu-form-group">
+                <!--                默认自己,二期-->
+                <view class="title">管理者</view>
+                <input placeholder="请输入管理者" name="input" v-model="createUserForm.userMaster"></input>
+            </view>
+        </view>
+
+        <view>
+            <view class="wcpzzzfoot">
+                <view class="wcpzzzbtn-bottom" style="background-color:#ff8200;color: white"
+                      @tap="createUser(createUserForm)">确认新增
+                </view>
+            </view>
         </view>
         <c-notify ref='notify'></c-notify>
     </view>
 </template>
 
 <script>
-    import {getTrainerList} from '@/common/api.js'
+    import {findListUser, findListLocation, create, createUser} from '@/common/api.js'
 
     export default {
         data() {
-            return {}
+            return {
+                //items替换方法的find
+                itemsListUser: [],
+                itemsListUser: [],
+                itemsListLocation: [],
+                createUserForm: {
+                    email: '',
+                    mobile: '',
+                    modiTime: '',
+                    role: '',
+                    userMaster: '',
+                    userName: '',
+                }
+            }
         },
         methods: {
             toPage(path) {
                 this.COMMONFUNCTION.toPage(path)
             },
+            createUser(item) {
+                let request = {};
+                request = item
+                createUser(request).then(res => {
+                    // this.itemsListUser = res
+                    console.log('createUser' + JSON.stringify(res))
+                }).catch((err) => {
+                    console.log('createUser' + err)
+                })
+
+            },
+            findListUser(item) {
+                let request = {};
+                request.userName = item
+                findListUser(request).then(res => {
+                    this.itemsListUser = res
+                    console.log('findListUser' + JSON.stringify(res))
+                }).catch((err) => {
+                    console.log('findListUser' + err)
+                })
+            },
+            // 仓库搜索
+            findListLocation(item) {
+                let request = {};
+                request.locationName = item
+                findListLocation(request).then((res) => {
+                    this.itemsListLocation = res
+                    console.log('findListLocation' + JSON.stringify(res))
+                }).catch((err) => {
+                    console.log('findListLocation' + err)
+                })
+            }
+
         },
         computed: {},
         onReachBottom() {
         },
         filters: {},
         onLoad() {
-
+            this.findListLocation("")
         },
         onShow() {
 
@@ -76,7 +166,12 @@
         padding: 0 10px;
         white-space: pre-wrap; /*空格*/
     }
+
+    .cu-form-group .title {
+        min-width: calc(4em + 15px);
+    }
 </style>
+
 
 <!--参考书-->
 <!--

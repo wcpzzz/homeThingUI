@@ -26,7 +26,7 @@ _vue.default.prototype.COMMONFUNCTION = _commonFunction.default;
 _vue.default.prototype.STORAGECONFIG = _storageConfig.default;
 _vue.default.filter('nullFilter', function (value) {
   return value ? value : '';
-});var notify = function notify() {__webpack_require__.e(/*! require.ensure | components/feedback/nofity */ "components/feedback/nofity").then((function () {return resolve(__webpack_require__(/*! @/components/feedback/nofity.vue */ 31));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
+});var notify = function notify() {__webpack_require__.e(/*! require.ensure | components/feedback/nofity */ "components/feedback/nofity").then((function () {return resolve(__webpack_require__(/*! @/components/feedback/nofity.vue */ 128));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
 
 _vue.default.component('c-notify', notify);
 

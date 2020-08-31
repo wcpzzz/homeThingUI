@@ -24,12 +24,17 @@
         </view>
         <view>
             <!--            这里展示物品列表-->
+            <view class='cu-form-group' v-for="(item,index) in itemsListThing" :key="index">
+                {{item.thingName}}
+            </view>
         </view>
         <view>
             <!--            这里是底部，放新增和记录按钮-->
             <!--            记录按时间倒序展示物品变动情况-->
-
-
+            <view class="wcpzzzfoot">
+                <view class="wcpzzzbtn-bottom" style="background-color:#ff8200;color: white" @tap="toPage('/pages/user/usercreate')">新增</view>
+                <view class="wcpzzzbtn-bottom" style="background-color:white;" @tap="toPage('/pages/user/userrecord')">记录</view>
+            </view>
         </view>
         <c-notify ref='notify'></c-notify>
     </view>

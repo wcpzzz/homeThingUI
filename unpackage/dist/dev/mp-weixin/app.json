@@ -22,5 +22,6 @@
   },
   "usingComponents": {
     "c-notify": "/components/feedback/nofity"
-  }
+  },
+  "sitemapLocation": "sitemap4.json"
 }

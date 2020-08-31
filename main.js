@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App'
 import commonFuntcion from '@/utils/common-function.js'
+import AUTOAPI from '@/common/api.js'
+import AUTOAPINEW from '@/common/apinew.js'
 import httpConfig from '@/common/http-config.js'
 import storageConfig from '@/common/storage-config.js'
 import dateUtils from '@/utils/date-utils.js'
@@ -15,6 +17,9 @@ Vue.prototype.HTTPCONFIG=httpConfig
 
 Vue.prototype.COMMONFUNCTION=commonFuntcion
 Vue.prototype.STORAGECONFIG=storageConfig
+Vue.prototype.AUTOAPI=AUTOAPI
+Vue.prototype.AUTOAPINEW=AUTOAPINEW
+
 Vue.filter('nullFilter',(value)=>{
 	return value?value:''
 })

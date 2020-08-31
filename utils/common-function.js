@@ -1,9 +1,9 @@
 import storageConfig from '@/common/storage-config.js'
 
 const toLogin=()=>{
-	// uni.navigateTo({
-	//     url: '/pages/login/login'
-	// })
+	uni.navigateTo({
+	    url: '/pages/home/home'
+	})
 }
 
 /**

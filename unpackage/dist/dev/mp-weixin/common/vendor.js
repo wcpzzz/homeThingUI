@@ -757,7 +757,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7091,7 +7091,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7112,14 +7112,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7195,7 +7195,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8532,7 +8532,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/user": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "成员管理", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/location/location": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "仓库管理", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/thing/thing": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "物品管理", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/usercreate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "成员新增", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/userrecord": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "成员记录", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/location/locationcreate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "仓库新增", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/location/locationrecord": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "仓库记录", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/thing/thingcreate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "物品新增", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/thing/thingrecord": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "物品记录", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/thing/thingupdate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "物品修改", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/userupdate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "成员修改" }, "pages/location/locationupdate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "仓库修改" } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367" }, "pages/user/user": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "成员管理" }, "pages/user/usercreate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "成员新增" }, "pages/user/userupdate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "成员修改" }, "pages/user/userrecord": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "成员记录" }, "pages/location/location": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "仓库管理" }, "pages/location/locationcreate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "仓库新增" }, "pages/location/locationupdate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "仓库修改" }, "pages/location/locationrecord": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "仓库记录" }, "pages/thing/thing": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "物品管理" }, "pages/thing/thingcreate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "物品新增" }, "pages/thing/thingupdate": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "物品修改" }, "pages/thing/thingrecord": { "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367", "navigationBarTitleText": "物品记录" } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarBackgroundColor": "#4e5367", "backgroundColorTop": "#4e5367" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -8690,15 +8690,15 @@ function normalizeComponent (
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = exports.getRandomMerchantTxnNumber = void 0;var _storageConfig = _interopRequireDefault(__webpack_require__(/*! @/common/storage-config.js */ 16));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var toLogin = function toLogin() {
+  uni.navigateTo({
+    url: '/pages/home/home' });
 
+};
 
-
-} // uni.navigateTo({
-//     url: '/pages/login/login'
-// })
 /**
- * 随机生成订单号
- */;var getRandomMerchantTxnNumber = function getRandomMerchantTxnNumber() {
+    * 随机生成订单号
+    */
+var getRandomMerchantTxnNumber = function getRandomMerchantTxnNumber() {
   var mydate = new Date();
   var result = mydate.getFullYear() + '' + (mydate.getMonth() + 1 > 9 ? mydate.getMonth() + 1 : '0' + (mydate.getMonth() + 1)) + '' + (mydate.getDate() > 9 ? mydate.getDate() : '0' + mydate.getDate()) + mydate.getHours() + '' +
   mydate.getMinutes() + '' + mydate.getSeconds() + '' + Math.floor((1 + Math.random()) * 1000000);
@@ -9115,21 +9115,10 @@ var interfaces = {
   findOneUser2: 'user2/findOne',
   findListUser2: 'user2/findList',
   updateByIdUser2: 'user2/updateById',
-  deleteUser2: 'user2/delete', //getParams
-
-
-  /*
-  :'',
-  create: '/create',
-  page:'/page',
-  findOne:'/findOne',
-  findList:'/findList',
-  updateById:'/updateById',
-  delete:'/delete',
-  */
-  login: '/cust/custLogin',
-  regist: '/cust/custRegister' };var _default =
-
+  deleteUser2: 'user2/delete' //getParams
+};
+var interfacesnew = {
+  login: 'user2/login' };var _default =
 
 {
   ossAC_headPhoto: ossAC_headPhoto,
@@ -9144,6 +9133,7 @@ var interfaces = {
   defaultStartDate: defaultStartDate,
   requestUrl: requestUrl,
   interfaces: interfaces,
+  interfacesnew: interfacesnew,
   cantGetCard: cantGetCard,
   unRegist: unRegist,
   version: version,
@@ -9195,7 +9185,7 @@ Date.prototype.Format = function (fmt)
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.regist = exports.login = exports.deleteUser2 = exports.user2 = exports.deleteThingtype = exports.thingtype = exports.thingandtype = exports.deleteThingandlocation = exports.thingandlocation = exports.deleteLocation = exports.location = exports.updateByIdUser2 = exports.findListUser2 = exports.findOneUser2 = exports.pageUser2 = exports.createUser2 = exports.updateByIdThingtype = exports.findListThingtype = exports.findOneThingtype = exports.pageThingtype = exports.createThingtype = exports.deleteThingandtype = exports.updateByIdThingandtype = exports.findListThingandtype = exports.findOneThingandtype = exports.pageThingandtype = exports.createThingandtype = exports.updateByIdThingandlocation = exports.findListThingandlocation = exports.findOneThingandlocation = exports.pageThingandlocation = exports.createThingandlocation = exports.deleteThing = exports.updateByIdThing = exports.findListThing = exports.findOneThing = exports.pageThing = exports.createThing = exports.thing = exports.updateByIdLocation = exports.findListLocation = exports.findOneLocation = exports.pageLocation = exports.createLocation = void 0;var _httpUtils = _interopRequireDefault(__webpack_require__(/*! @/utils/http-utils.js */ 26));
+Object.defineProperty(exports, "__esModule", { value: true });exports.deleteUser2 = exports.user2 = exports.deleteThingtype = exports.thingtype = exports.thingandtype = exports.deleteThingandlocation = exports.thingandlocation = exports.deleteLocation = exports.location = exports.updateByIdUser2 = exports.findListUser2 = exports.findOneUser2 = exports.pageUser2 = exports.createUser2 = exports.updateByIdThingtype = exports.findListThingtype = exports.findOneThingtype = exports.pageThingtype = exports.createThingtype = exports.deleteThingandtype = exports.updateByIdThingandtype = exports.findListThingandtype = exports.findOneThingandtype = exports.pageThingandtype = exports.createThingandtype = exports.updateByIdThingandlocation = exports.findListThingandlocation = exports.findOneThingandlocation = exports.pageThingandlocation = exports.createThingandlocation = exports.deleteThing = exports.updateByIdThing = exports.findListThing = exports.findOneThing = exports.pageThing = exports.createThing = exports.thing = exports.updateByIdLocation = exports.findListLocation = exports.findOneLocation = exports.pageLocation = exports.createLocation = void 0;var _httpUtils = _interopRequireDefault(__webpack_require__(/*! @/utils/http-utils.js */ 26));
 var _httpConfig = _interopRequireDefault(__webpack_require__(/*! @/common/http-config.js */ 17));
 var _sign = _interopRequireDefault(__webpack_require__(/*! @/utils/sign.js */ 27));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
@@ -9661,58 +9651,7 @@ var deleteUser2 = function deleteUser2(item) {
       reject(res);
     });
   });
-};
-
-
-/**
-    * 登录
-    */exports.deleteUser2 = deleteUser2;
-var login = function login(wxCode, grpCode, hideLoading) {
-  return new Promise(function (resolve, reject) {
-    var request = {};
-    request.wxCode = wxCode;
-    if (grpCode)
-    request.grpCode = grpCode;
-    _httpUtils.default.realPost(request, _httpConfig.default.interfaces.login, '', hideLoading, true).
-    then(function (response) {
-      resolve(response);
-    }).catch(function (res) {
-      reject(res);
-
-    });
-  });
-};
-
-
-
-
-
-
-
-/**
-    * 注册
-    */exports.login = login;
-var regist = function regist(wxCode, custName, custSrc, ownType, grpCode, photo, shopCode, mobile) {
-  return new Promise(function (resolve, reject) {
-    var request = {};
-    request.custName = custName;
-    request.custSrc = custSrc;
-    request.grpCode = grpCode;
-    request.wxCode = wxCode;
-    request.ownType = ownType;
-
-    if (mobile)
-    request.mobile = mobile;
-    request.photo = photo;
-    if (shopCode)
-    request.shopCode = shopCode;
-
-    _httpUtils.default.realPost(request, _httpConfig.default.interfaces.regist, '', false, false).
-    then(function (response) {
-      resolve(response);
-    });
-  });
-};exports.regist = regist;
+};exports.deleteUser2 = deleteUser2;
 
 /***/ }),
 /* 26 */
@@ -9726,6 +9665,7 @@ var regist = function regist(wxCode, custName, custSrc, ownType, grpCode, photo,
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _httpConfig = _interopRequireDefault(__webpack_require__(/*! @/common/http-config.js */ 17));
 var _commonFunction = _interopRequireDefault(__webpack_require__(/*! @/utils/common-function.js */ 15));
 var _storageConfig = _interopRequireDefault(__webpack_require__(/*! @/common/storage-config.js */ 16));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
 var _success = '00';
 var loadingTitle = '请稍后...';
 var tokenError = 'X1';
@@ -9799,8 +9739,11 @@ var commonPost = function commonPost(request, url, hideLoading, hideError) {
 
 var realPost = function realPost(request, interfaceName, token, hideLoading, hideError) {
   return new Promise(function (resolve, reject) {
-    if (token)
-    request.token = token;
+    var Token = '';
+    if (token) {
+      request.token = token;
+      Token = token;
+    }
     console.log("request：------" + JSON.stringify(request));
     console.log("request url:------" + _httpConfig.default.requestUrl + interfaceName);
     if (!hideLoading) {
@@ -9813,13 +9756,16 @@ var realPost = function realPost(request, interfaceName, token, hideLoading, hid
       url: _httpConfig.default.requestUrl + interfaceName,
       data: request,
       method: 'POST',
+      header: {
+        'Authorization': Token },
+
       success: function success(res) {
         res = res.data;
         console.log("response:----" + JSON.stringify(res));
         uni.hideLoading();
         if (res.success == true) {
-          if (res.token) {
-            _commonFunction.default.saveStorage(_storageConfig.default.tokenStorage, res.token).
+          if (res.data.token) {
+            _commonFunction.default.saveStorage(_storageConfig.default.tokenStorage, res.data.token).
             then(function () {
               resolve(res.data);
             }).catch(function () {
@@ -9829,9 +9775,8 @@ var realPost = function realPost(request, interfaceName, token, hideLoading, hid
             });
           }
           resolve(res.data);
-        } else
-        {
-          if (res.success == false) {
+        } else {
+          if (res.success === '-1') {
             _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
           }
           reject(res.message);
@@ -9858,8 +9803,11 @@ var realPost = function realPost(request, interfaceName, token, hideLoading, hid
     */
 var realGet = function realGet(request, interfaceName, token, hideLoading, hideError) {
   return new Promise(function (resolve, reject) {
-    if (token)
-    request.token = token;
+    var Token = '';
+    if (token) {
+      request.token = token;
+      Token = token;
+    }
     console.log("request：------" + JSON.stringify(request));
     console.log("request url:------" + _httpConfig.default.requestUrl + interfaceName);
     if (!hideLoading) {
@@ -9872,6 +9820,9 @@ var realGet = function realGet(request, interfaceName, token, hideLoading, hideE
       url: _httpConfig.default.requestUrl + interfaceName,
       data: request,
       method: 'GET',
+      header: {
+        'Authorization': Token },
+
       success: function success(res) {
         res = res.data;
         console.log("response:----" + JSON.stringify(res));
@@ -9888,9 +9839,8 @@ var realGet = function realGet(request, interfaceName, token, hideLoading, hideE
             });
           }
           resolve(res.data);
-        } else
-        {
-          if (res.success == false) {
+        } else {
+          if (res.success === '-1') {
             _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
           }
           reject(res.message);
@@ -9916,8 +9866,11 @@ var realGet = function realGet(request, interfaceName, token, hideLoading, hideE
     */
 var realPostParams = function realPostParams(request, interfaceName, token, hideLoading, hideError) {
   return new Promise(function (resolve, reject) {
-    if (token)
-    request.token = token;
+    var Token = '';
+    if (token) {
+      request.token = token;
+      Token = token;
+    }
     console.log("request：------" + JSON.stringify(request));
     console.log("request url:------" + _httpConfig.default.requestUrl + interfaceName);
     if (!hideLoading) {
@@ -9931,8 +9884,9 @@ var realPostParams = function realPostParams(request, interfaceName, token, hide
       data: request,
       method: 'POST',
       header: {
-        'content-type': 'application/x-www-form-urlencoded' //自定义请求头信息
-      },
+        'content-type': 'application/x-www-form-urlencoded', //自定义请求头信息
+        'Authorization': Token },
+
       success: function success(res) {
         res = res.data;
         console.log("response:----" + JSON.stringify(res));
@@ -9949,9 +9903,8 @@ var realPostParams = function realPostParams(request, interfaceName, token, hide
             });
           }
           resolve(res.data);
-        } else
-        {
-          if (res.success == false) {
+        } else {
+          if (res.success === '-1') {
             _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
           }
           reject(res.message);
@@ -9979,8 +9932,11 @@ var realPostParams = function realPostParams(request, interfaceName, token, hide
     */
 var realGetParams = function realGetParams(request, interfaceName, token, hideLoading, hideError) {
   return new Promise(function (resolve, reject) {
-    if (token)
-    request.token = token;
+    var Token = '';
+    if (token) {
+      request.token = token;
+      Token = token;
+    }
     console.log("request：------" + JSON.stringify(request));
     console.log("request url:------" + _httpConfig.default.requestUrl + interfaceName);
     if (!hideLoading) {
@@ -9994,8 +9950,9 @@ var realGetParams = function realGetParams(request, interfaceName, token, hideLo
       data: request,
       method: 'GET',
       header: {
-        'content-type': 'application/x-www-form-urlencoded' //自定义请求头信息
-      },
+        'content-type': 'application/x-www-form-urlencoded', //自定义请求头信息
+        'Authorization': Token },
+
       success: function success(res) {
         res = res.data;
         console.log("response:----" + JSON.stringify(res));
@@ -10012,9 +9969,8 @@ var realGetParams = function realGetParams(request, interfaceName, token, hideLo
             });
           }
           resolve(res.data);
-        } else
-        {
-          if (res.success == false) {
+        } else {
+          if (res.success === '-1') {
             _commonFunction.default.removeStorageByKey(_storageConfig.default.tokenStorage);
           }
           reject(res.message);
@@ -10042,8 +9998,13 @@ var postNoAutoLogin = function postNoAutoLogin(request, interfaceName, hideLoadi
     _commonFunction.default.checkStorgeHasUser(false).then(function (token) {
       realPost(request, interfaceName, token, hideLoading, hideError).then(function (res) {
         resolve(res);
-      }).catch(function (reason) {inject(reason);});
-    }).catch(function () {inject('尚未登录!');});
+      }).catch(function (reason) {
+        inject(reason);
+      });
+    }).catch(function () {
+
+      inject('尚未登录!');
+    });
   });
 };
 /**
@@ -10051,13 +10012,16 @@ var postNoAutoLogin = function postNoAutoLogin(request, interfaceName, hideLoadi
     */
 var post = function post(request, interfaceName, hideLoading, hideError) {
   return new Promise(function (resolve, inject) {
-    // commonFuntcion.checkStorgeHasUser(true).then(token=>{
-    console.log(request);
-    var token = 'eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIzMzc2MjkzMDQyODIxNDA2NzI0MTAiLCJ1c2VySWQiOiIzMzc2MjkzMDQyNjExNjkxNTI0MTAiLCJ1c2VyTmFtZSI6IumihOS7mOWNoeaVsOaNruaOpeWFpSIsImV4cGlyZSI6MTU5ODA2MjM3ODI2NywidG9rZW5kYXRlIjoiMjAyMC0wNy0yMiIsImNvbnRhY3RNb2JpbGUiOiIxODkgMTQ3MyA3MTYxIiwiY2hhbm5lbFNvdXJjZXMiOiIzIiwiY29udGFjdEVtYWlsIjoiY2hlbnlAc3Mtc29mdC5jb20iLCJjb250YWN0TmFtZSI6IumZiOa0iyIsImFwcE5hbWUiOiLpooTku5jljaHmlbDmja7mjqXlhaUiLCJhcHBJZCI6IjMzNzYyOTMwNDI4MjE0MDY3MjQxMCIsInBJZCI6InAwMDAxNyIsInRva2VuTm8iOiIxIiwidG9rZW50eXBlIjoiY2xpZW50In0.ISzLALNeptKCCT_L_6NtcWddnQORG5o-yhPSaAHrHQsO0C_vFZHlky9IRQAoTwgIoUZldICn2B-a6oLyY7u3Re7BEvuSNhkAdI0p2WYB16cbJ53zgsR57bo8bT5sIdkT-NDATgxBUB5HCUoqE0gqWQv05dRoizMTK1uiwGPcte4';
-    realPost(request, interfaceName, token, hideLoading, hideError).then(function (res) {
-      resolve(res);
-    }).catch(function (reason) {inject(reason);});
-    // }).catch(()=>{inject('尚未登录!')})
+    // todo
+    _commonFunction.default.checkStorgeHasUser(true).then(function (token) {
+      realPost(request, interfaceName, token, hideLoading, hideError).then(function (res) {
+        resolve(res);
+      }).catch(function (reason) {
+        inject(reason);
+      });
+    }).catch(function () {
+      inject('尚未登录!');
+    });
   });
 };
 
@@ -10070,8 +10034,12 @@ var get = function get(request, interfaceName, hideLoading, hideError) {
     _commonFunction.default.checkStorgeHasUser(true).then(function (token) {
       realGet(request, interfaceName, token, hideLoading, hideError).then(function (res) {
         resolve(res);
-      }).catch(function (reason) {inject(reason);});
-    }).catch(function () {inject('尚未登录!');});
+      }).catch(function (reason) {
+        inject(reason);
+      });
+    }).catch(function () {
+      inject('尚未登录!');
+    });
   });
 };
 
@@ -10084,8 +10052,12 @@ var postParams = function postParams(request, interfaceName, hideLoading, hideEr
     _commonFunction.default.checkStorgeHasUser(true).then(function (token) {
       realPostParams(request, interfaceName, token, hideLoading, hideError).then(function (res) {
         resolve(res);
-      }).catch(function (reason) {inject(reason);});
-    }).catch(function () {inject('尚未登录!');});
+      }).catch(function (reason) {
+        inject(reason);
+      });
+    }).catch(function () {
+      inject('尚未登录!');
+    });
   });
 };
 
@@ -10097,8 +10069,12 @@ var postParamsNoAutoLogin = function postParamsNoAutoLogin(request, interfaceNam
     _commonFunction.default.checkStorgeHasUser(false).then(function (token) {
       realPostParams(request, interfaceName, token, hideLoading, hideError).then(function (res) {
         resolve(res);
-      }).catch(function (reason) {inject(reason);});
-    }).catch(function () {inject('尚未登录!');});
+      }).catch(function (reason) {
+        inject(reason);
+      });
+    }).catch(function () {
+      inject('尚未登录!');
+    });
   });
 };
 
@@ -10110,8 +10086,12 @@ var getParams = function getParams(request, interfaceName, hideLoading, hideErro
     _commonFunction.default.checkStorgeHasUser(true).then(function (token) {
       realGetParams(request, interfaceName, token, hideLoading, hideError).then(function (res) {
         resolve(res);
-      }).catch(function (reason) {inject(reason);});
-    }).catch(function () {inject('尚未登录!');});
+      }).catch(function (reason) {
+        inject(reason);
+      });
+    }).catch(function () {
+      inject('尚未登录!');
+    });
   });
 };
 
@@ -10486,6 +10466,31 @@ module.exports = {
   jsonR2Unpack: jsonR2Unpack,
   objKeySort: objKeySort,
   SHA256: SHA256 };
+
+/***/ }),
+/* 29 */
+/*!*********************************************************************************!*\
+  !*** C:/Users/Administrator/Downloads/yinshishixi/homeThingUI/common/apinew.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.login = void 0;var _httpUtils = _interopRequireDefault(__webpack_require__(/*! @/utils/http-utils.js */ 26));
+var _httpConfig = _interopRequireDefault(__webpack_require__(/*! @/common/http-config.js */ 17));
+var _sign = _interopRequireDefault(__webpack_require__(/*! @/utils/sign.js */ 27));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var login = function login(item) {
+  return new Promise(function (resolve, reject) {
+    var request = {};
+    request = item;
+    _httpUtils.default.realPost(request, _httpConfig.default.interfacesnew.login).then(function (response) {
+      resolve(response);
+    }).catch(function (res) {
+      reject(res);
+    });
+  });
+};exports.login = login;
 
 /***/ })
 ]]);

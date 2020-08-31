@@ -48,21 +48,11 @@
             return {
                 //items替换方法的find
                 itemsListThing: [],
-                itemsListUser2: [],
+                itemsListUser: [],
                 itemsListLocation: []
             }
         },
         methods: {
-/*            findListUser2(item) {
-                let request = {};
-                request.userName = item
-                findListUser2(request).then((res) => {
-                    this.itemsListUser2 = res
-                    console.log('itemsListUser2' + JSON.stringify(this.itemsListUser2))
-                }).catch((err) => {
-                    console.log('findListUser2' + err)
-                })
-            },*/
             toPage(path) {
                 this.COMMONFUNCTION.toPage(path)
             },

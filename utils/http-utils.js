@@ -112,7 +112,7 @@ const realPost = (request, interfaceName, token, hideLoading, hideError) => {
                         }
                         resolve(res.data)
                     } else {
-                        if (res.success == false) {
+                        if (res.success === '-1') {
                             commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
                         }
                         reject(res.message)
@@ -176,7 +176,7 @@ const realGet = (request, interfaceName, token, hideLoading, hideError) => {
                         }
                         resolve(res.data)
                     } else {
-                        if (res.success == false) {
+                        if (res.success === '-1') {
                             commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
                         }
                         reject(res.message)
@@ -240,7 +240,7 @@ const realPostParams = (request, interfaceName, token, hideLoading, hideError) =
                         }
                         resolve(res.data)
                     } else {
-                        if (res.success == false) {
+                        if (res.success === '-1') {
                             commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
                         }
                         reject(res.message)
@@ -306,7 +306,7 @@ const realGetParams = (request, interfaceName, token, hideLoading, hideError) =>
                         }
                         resolve(res.data)
                     } else {
-                        if (res.success == false) {
+                        if (res.success === '-1') {
                             commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
                         }
                         reject(res.message)
@@ -338,6 +338,7 @@ const postNoAutoLogin = (request, interfaceName, hideLoading, hideError) => {
                 inject(reason)
             })
         }).catch(() => {
+
             inject('尚未登录!')
         })
     })

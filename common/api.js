@@ -2,7 +2,7 @@ import httpUtils from '@/utils/http-utils.js'
 import httpConfig from '@/common/http-config.js'
 import signUtils from '@/utils/sign.js'
 
-export const createLocation = (item) => {
+const createLocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -13,7 +13,7 @@ export const createLocation = (item) => {
         })
     })
 }
-export const pageLocation = (item) => {
+const pageLocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -24,7 +24,7 @@ export const pageLocation = (item) => {
         })
     })
 }
-export const findOneLocation = (item) => {
+const findOneLocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -35,7 +35,7 @@ export const findOneLocation = (item) => {
         })
     })
 }
-export const findListLocation = (item) => {
+const findListLocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -46,7 +46,7 @@ export const findListLocation = (item) => {
         })
     })
 }
-export const updateByIdLocation = (item) => {
+const updateByIdLocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -57,18 +57,7 @@ export const updateByIdLocation = (item) => {
         })
     })
 }
-export const thing = (item) => {
-    return new Promise((resolve, reject) => {
-        let request = {};
-        request = item;
-        httpUtils.post(request, httpConfig.interfaces.thing).then((response) => {
-            resolve(response);
-        }).catch((res) => {
-            reject(res);
-        })
-    })
-}
-export const createThing = (item) => {
+const createThing = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -79,7 +68,7 @@ export const createThing = (item) => {
         })
     })
 }
-export const pageThing = (item) => {
+const pageThing = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -90,7 +79,7 @@ export const pageThing = (item) => {
         })
     })
 }
-export const findOneThing = (item) => {
+const findOneThing = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -101,10 +90,11 @@ export const findOneThing = (item) => {
         })
     })
 }
-export const findListThing = (item) => {
+const findListThing = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
+        console.log(JSON.stringify(request))
         httpUtils.post(request, httpConfig.interfaces.findListThing).then((response) => {
             resolve(response);
         }).catch((res) => {
@@ -112,7 +102,7 @@ export const findListThing = (item) => {
         })
     })
 }
-export const updateByIdThing = (item) => {
+const updateByIdThing = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -123,18 +113,7 @@ export const updateByIdThing = (item) => {
         })
     })
 }
-export const deleteThing = (item) => {
-    return new Promise((resolve, reject) => {
-        let request = {};
-        request = item;
-        httpUtils.post(request, httpConfig.interfaces.deleteThing).then((response) => {
-            resolve(response);
-        }).catch((res) => {
-            reject(res);
-        })
-    })
-}
-export const createThingandlocation = (item) => {
+const createThingandlocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -145,7 +124,7 @@ export const createThingandlocation = (item) => {
         })
     })
 }
-export const pageThingandlocation = (item) => {
+const pageThingandlocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -156,7 +135,7 @@ export const pageThingandlocation = (item) => {
         })
     })
 }
-export const findOneThingandlocation = (item) => {
+const findOneThingandlocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -167,7 +146,7 @@ export const findOneThingandlocation = (item) => {
         })
     })
 }
-export const findListThingandlocation = (item) => {
+const findListThingandlocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -178,7 +157,7 @@ export const findListThingandlocation = (item) => {
         })
     })
 }
-export const updateByIdThingandlocation = (item) => {
+const updateByIdThingandlocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -189,7 +168,7 @@ export const updateByIdThingandlocation = (item) => {
         })
     })
 }
-export const createThingandtype = (item) => {
+const createThingandtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -200,7 +179,7 @@ export const createThingandtype = (item) => {
         })
     })
 }
-export const pageThingandtype = (item) => {
+const pageThingandtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -211,7 +190,7 @@ export const pageThingandtype = (item) => {
         })
     })
 }
-export const findOneThingandtype = (item) => {
+const findOneThingandtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -222,7 +201,7 @@ export const findOneThingandtype = (item) => {
         })
     })
 }
-export const findListThingandtype = (item) => {
+const findListThingandtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -233,7 +212,7 @@ export const findListThingandtype = (item) => {
         })
     })
 }
-export const updateByIdThingandtype = (item) => {
+const updateByIdThingandtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -244,18 +223,7 @@ export const updateByIdThingandtype = (item) => {
         })
     })
 }
-export const deleteThingandtype = (item) => {
-    return new Promise((resolve, reject) => {
-        let request = {};
-        request = item;
-        httpUtils.post(request, httpConfig.interfaces.deleteThingandtype).then((response) => {
-            resolve(response);
-        }).catch((res) => {
-            reject(res);
-        })
-    })
-}
-export const createThingtype = (item) => {
+const createThingtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -266,7 +234,7 @@ export const createThingtype = (item) => {
         })
     })
 }
-export const pageThingtype = (item) => {
+const pageThingtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -277,7 +245,7 @@ export const pageThingtype = (item) => {
         })
     })
 }
-export const findOneThingtype = (item) => {
+const findOneThingtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -288,7 +256,7 @@ export const findOneThingtype = (item) => {
         })
     })
 }
-export const findListThingtype = (item) => {
+const findListThingtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -299,7 +267,7 @@ export const findListThingtype = (item) => {
         })
     })
 }
-export const updateByIdThingtype = (item) => {
+const updateByIdThingtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -310,7 +278,7 @@ export const updateByIdThingtype = (item) => {
         })
     })
 }
-export const createUser2 = (item) => {
+const createUser2 = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -321,7 +289,7 @@ export const createUser2 = (item) => {
         })
     })
 }
-export const pageUser2 = (item) => {
+const pageUser2 = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -332,7 +300,7 @@ export const pageUser2 = (item) => {
         })
     })
 }
-export const findOneUser2 = (item) => {
+const findOneUser2 = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -343,19 +311,18 @@ export const findOneUser2 = (item) => {
         })
     })
 }
-export const findListUser2 = (item) => {
+const findListUser2 = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
         httpUtils.post(request, httpConfig.interfaces.findListUser2).then((response) => {
-
             resolve(response);
         }).catch((res) => {
             reject(res);
         })
     })
 }
-export const updateByIdUser2 = (item) => {
+const updateByIdUser2 = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -366,7 +333,7 @@ export const updateByIdUser2 = (item) => {
         })
     })
 }
-export const location = (item) => {
+const location = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -377,7 +344,7 @@ export const location = (item) => {
         })
     })
 }
-export const deleteLocation = (item) => {
+const deleteLocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -388,7 +355,29 @@ export const deleteLocation = (item) => {
         })
     })
 }
-export const thingandlocation = (item) => {
+const thing = (item) => {
+    return new Promise((resolve, reject) => {
+        let request = {};
+        request = item;
+        httpUtils.getParams(request, httpConfig.interfaces.thing).then((response) => {
+            resolve(response);
+        }).catch((res) => {
+            reject(res);
+        })
+    })
+}
+const deleteThing = (item) => {
+    return new Promise((resolve, reject) => {
+        let request = {};
+        request = item;
+        httpUtils.getParams(request, httpConfig.interfaces.deleteThing).then((response) => {
+            resolve(response);
+        }).catch((res) => {
+            reject(res);
+        })
+    })
+}
+const thingandlocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -399,7 +388,7 @@ export const thingandlocation = (item) => {
         })
     })
 }
-export const deleteThingandlocation = (item) => {
+const deleteThingandlocation = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -410,7 +399,8 @@ export const deleteThingandlocation = (item) => {
         })
     })
 }
-export const thingandtype = (item) => {
+
+const thingandtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -421,7 +411,18 @@ export const thingandtype = (item) => {
         })
     })
 }
-export const thingtype = (item) => {
+const deleteThingandtype = (item) => {
+    return new Promise((resolve, reject) => {
+        let request = {};
+        request = item;
+        httpUtils.getParams(request, httpConfig.interfaces.deleteThingandtype).then((response) => {
+            resolve(response);
+        }).catch((res) => {
+            reject(res);
+        })
+    })
+}
+const thingtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -432,7 +433,7 @@ export const thingtype = (item) => {
         })
     })
 }
-export const deleteThingtype = (item) => {
+const deleteThingtype = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -443,7 +444,7 @@ export const deleteThingtype = (item) => {
         })
     })
 }
-export const user2 = (item) => {
+const user2 = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -454,7 +455,7 @@ export const user2 = (item) => {
         })
     })
 }
-export const deleteUser2 = (item) => {
+const deleteUser2 = (item) => {
     return new Promise((resolve, reject) => {
         let request = {};
         request = item;
@@ -464,4 +465,49 @@ export const deleteUser2 = (item) => {
             reject(res);
         })
     })
+}
+
+export default {
+    location,
+    createLocation,
+    pageLocation,
+    findOneLocation,
+    findListLocation,
+    updateByIdLocation,
+    deleteLocation,
+    thing,
+    createThing,
+    pageThing,
+    findOneThing,
+    findListThing,
+    updateByIdThing,
+    deleteThing,
+    thingandlocation,
+    createThingandlocation,
+    pageThingandlocation,
+    findOneThingandlocation,
+    findListThingandlocation,
+    updateByIdThingandlocation,
+    deleteThingandlocation,
+    thingandtype,
+    createThingandtype,
+    pageThingandtype,
+    findOneThingandtype,
+    findListThingandtype,
+    updateByIdThingandtype,
+    deleteThingandtype,
+    thingtype,
+    createThingtype,
+    pageThingtype,
+    findOneThingtype,
+    findListThingtype,
+    updateByIdThingtype,
+    deleteThingtype,
+    user2,
+    createUser2,
+    pageUser2,
+    findOneUser2,
+    findListUser2,
+    updateByIdUser2,
+    deleteUser2
 }
