@@ -65,8 +65,8 @@
         onShareAppMessage() {
             let share = {
                 //分享到微信朋友
-                title: 'LOOP健身房预约',
-                path: '/pages/tarBar/coursetable/coursetable',
+                title: '家庭物品管理系统',
+                path: '/pages/home/home',
                 // imageURL: '/static/share.jpg'
             }
             return share;

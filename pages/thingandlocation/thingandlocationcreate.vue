@@ -1,77 +1,65 @@
 <template>
     <view class="page">
-        <!--
-        {
-  "creater": "string",
-  "id": 0,
-  "master": "string",
-  "owner": "string",
-  "UserMoney": 0,
-  "UserName": "string",
-  "UserNum": 0,
-  "UserStatus": "string"
-}
-        -->
+<!--        {
+        locationId	string
+        locationMaster	string
+        地点上级
+
+        locationMemo	string
+        地点注释
+
+        locationModiTime	string($date-time)
+        修改时间
+
+        locationName	string
+        地点名称
+
+        locationSlave	string
+        地点下属
+
+        locationUserCreater	string
+        创建者
+
+        locationUserMaster	string
+        管理者
+
+        }-->
         <view>
-            <!--            这里放各种输入框-->
-
-            <!--            {
-                        creater	string
-                        创建者
-
-                        id	integer($int32)
-                        master	string
-                        管理者
-
-                        modiTime	string($date-time)
-                        修改时间
-
-                        owner	string
-                        拥有者
-
-                        UserMoney	number($double)
-                        物品价格
-
-                        UserName	string
-                        物品名
-
-                        UserNum	integer($int32)
-                        物品数量
-
-                        UserStatus	string
-                        物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）
-
-                        }-->
             <view class="cu-form-group">
                 <!--                默认模糊搜索-->
-                <view class="title">用户名</view>
-                <input placeholder="请输入用户名" name="input" v-model="createUserForm.userName"></input>
+                <view class="title">地点名称</view>
+                <input placeholder="请输入地点名称" name="input" v-model="createLocationForm.locationName"></input>
             </view>
             <view class="cu-form-group">
-                <view class="title">手机号</view>
-                <input placeholder="请输入手机号" name="input" v-model="createUserForm.userMobile"></input>
+                <view class="title">创建者</view>
+                <input placeholder="请输入创建者" name="input" v-model="createLocationForm.locationMaster"></input>
             </view>
             <view class="cu-form-group">
                 <!--                默认1-->
-                <view class="title">邮箱</view>
-                <input placeholder="请输入邮箱" name="input" v-model="createUserForm.userEmail"></input>
+                <view class="title">管理者</view>
+                <input placeholder="请输入管理者" name="input" v-model="createLocationForm.locationUserMaster"></input>
             </view>
             <view class="cu-form-group">
                 <!--                默认正常-->
-                <view class="title">角色</view>
-                <input placeholder="角色（1、终极管理员；2、管理员可以加人，改成员，不能改平级管理员；3、成员不能加人）" name="input" v-model="createUserForm.userRole"></input>
+                <view class="title">地点下属</view>
+                <input placeholder="请输入地点下属" name="input" v-model="createLocationForm.locationSlave"></input>
             </view>
             <view class="cu-form-group">
                 <!--                默认自己,二期-->
-                <view class="title">管理者</view>
-                <input placeholder="请输入管理者" name="input" v-model="createUserForm.userMaster"></input>
+                <view class="title">地点上级</view>
+                <input placeholder="请输入地点上级" name="input" v-model="createLocationForm.locationMaster"></input>
+            </view>
+            <view class="cu-form-group">
+                <!--                默认自己,二期-->
+                <view class="title">地点注释</view>
+                <input placeholder="请输入地点上级" name="input" v-model="createLocationForm.locationMemo"></input>
             </view>
         </view>
 
         <view>
             <view class="wcpzzzfoot">
                 <view class="wcpzzzbtn-bottom" style="background-color:#ff8200;color: white"
-                      @tap="createUser(createUserForm)">确认新增
+                      @tap="createUser(createLocationForm)">确认新增
                 </view>
             </view>
         </view>
@@ -86,17 +74,16 @@
         data() {
             return {
                 //items替换方法的find
-                itemsListUser: [],
                 itemsListLocation: [],
-                createUserForm: {
-                    userEmail: '',
-                    userId: '',
-                    userMaster: '',
-                    userMobile: '',
-                    userModiTime: '',
-                    userName: '',
-                    userRole: '',
-                    userSlave: '',
+                createLocationForm: {
+                    locationId: '',
+                    locationMaster: '',
+                    locationMemo: '',
+                    locationModiTime: '',
+                    locationName: '',
+                    locationSlave: '',
+                    locationUserCreater: '',
+                    locationUserMaster: '',
                 }
             }
         },
@@ -104,11 +91,11 @@
             toPage(path) {
                 this.COMMONFUNCTION.toPage(path)
             },
-            createUser(item) {
-                this.AUTOAPI.createUser(item).then(()=>{
-                    console.log('createUser')
+            createLocation(item) {
+                this.AUTOAPI.createLocation(item).then(()=>{
+                    console.log('createLocation')
                 }).catch(err=>{
-                    console.log('createUser'+err)
+                    console.log('createLocation'+err)
                 });
             }
 

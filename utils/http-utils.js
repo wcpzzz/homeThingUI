@@ -100,17 +100,21 @@ const realPost = (request, interfaceName, token, hideLoading, hideError) => {
                     console.log("response:----" + JSON.stringify(res))
                     uni.hideLoading();
                     if (res.success == true) {
-                        if (res.data.token) {
-                            commonFuntcion.saveStorage(storageConfig.tokenStorage, res.data.token)
+                        if (res.token) {
+                            commonFuntcion.saveStorage(storageConfig.tokenStorage, res.token)
                                 .then(() => {
-                                    resolve(res.data);
+                                    if (res.data) {
+                                        resolve(res.data);
+                                    }
                                 }).catch(() => {
                                 reject('token保存失败!')
                                 if (!hideError)
                                     showFaile('token保存失败!')
                             })
                         }
-                        resolve(res.data)
+                        if (res.data) {
+                            resolve(res.data)
+                        }
                     } else {
                         if (res.success === '-1') {
                             commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);
@@ -167,14 +171,18 @@ const realGet = (request, interfaceName, token, hideLoading, hideError) => {
                         if (res.token) {
                             commonFuntcion.saveStorage(storageConfig.tokenStorage, res.token)
                                 .then(() => {
-                                    resolve(res.data);
+                                    if (res.data) {
+                                        resolve(res.data);
+                                    }
                                 }).catch(() => {
                                 reject('token保存失败!')
                                 if (!hideError)
                                     showFaile('token保存失败!')
                             })
                         }
-                        resolve(res.data)
+                        if (res.data) {
+                            resolve(res.data)
+                        }
                     } else {
                         if (res.success === '-1') {
                             commonFuntcion.removeStorageByKey(storageConfig.tokenStorage);

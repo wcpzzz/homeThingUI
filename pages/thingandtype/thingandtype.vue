@@ -32,8 +32,8 @@
             <!--            这里是底部，放新增和记录按钮-->
             <!--            记录按时间倒序展示物品变动情况-->
             <view class="wcpzzzfoot">
-                <view class="wcpzzzbtn-bottom" style="background-color:#ff8200;color: white" @tap="toPage(thingcreate)">新增</view>
-                <view class="wcpzzzbtn-bottom" style="background-color:white;" @tap="toPage(thingrecord)">记录</view>
+                <view class="wcpzzzbtn-bottom" style="background-color:#ff8200;color: white" @tap="toPage('/pages/thing/thingcreate')">新增</view>
+                <view class="wcpzzzbtn-bottom" style="background-color:white;" @tap="toPage('/pages/thing/thingrecord')">记录</view>
             </view>
         </view>
         <c-notify ref='notify'></c-notify>
@@ -53,16 +53,6 @@
             }
         },
         methods: {
-/*            findListUser(item) {
-                let request = {};
-                request.userName = item
-                findListUser(request).then((res) => {
-                    this.itemsListUser = res
-                    console.log('itemsListUser' + JSON.stringify(this.itemsListUser))
-                }).catch((err) => {
-                    console.log('findListUser' + err)
-                })
-            },*/
             toPage(path) {
                 this.COMMONFUNCTION.toPage(path)
             },
@@ -102,8 +92,8 @@
         onShareAppMessage() {
             let share = {
                 //分享到微信朋友
-                title: 'LOOP健身房预约',
-                path: '/pages/tarBar/coursetable/coursetable',
+                title: '家庭物品管理系统',
+                path: '/pages/home/home',
                 // imageURL: '/static/share.jpg'
             }
             return share;

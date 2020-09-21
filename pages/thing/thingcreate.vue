@@ -64,12 +64,12 @@
             <view class="cu-form-group">
                 <!--                默认自己,二期-->
                 <view class="title">管理者</view>
-                <input placeholder="请输入管理者" name="input" v-model="createThingForm.master"></input>
+                <input placeholder="请输入管理者" name="input" v-model="createThingForm.thingUserMaster"></input>
             </view>
             <view class="cu-form-group">
                 <!--                默认自己,二期-->
                 <view class="title">拥有者</view>
-                <input placeholder="请输入拥有者" name="input" v-model="createThingForm.owner"></input>
+                <input placeholder="请输入拥有者" name="input" v-model="createThingForm.thingUserOwner"></input>
             </view>
         </view>
 
@@ -85,8 +85,6 @@
 </template>
 
 <script>
-    import {findListThing, findListLocation, create, createThing} from '@/common/api.js'
-
     export default {
         data() {
             return {
@@ -95,15 +93,15 @@
                 itemsListUser: [],
                 itemsListLocation: [],
                 createThingForm: {
-                    creater: '',
-                    id: '',
-                    master: '',
-                    modiTime: '',
-                    owner: '',
+                    thingId: '',
+                    thingModiTime: '',
                     thingMoney: '',
                     thingName: '',
                     thingNum: '',
                     thingStatus: '',
+                    thingUserCreater: '',
+                    thingUserMaster: '',
+                    thingUserOwner: ''
                 }
             }
         },
@@ -112,45 +110,18 @@
                 this.COMMONFUNCTION.toPage(path)
             },
             createThing(item) {
-                let request = {};
-                request = item
-                createThing(request).then(res => {
-                    // this.itemsListThing = res
-                    console.log('createThing' + JSON.stringify(res))
-                }).catch((err) => {
-                    console.log('createThing' + err)
-                })
-
-            },
-            findListThing(item) {
-                let request = {};
-                request.userName = item
-                findListThing(request).then(res => {
-                    this.itemsListThing = res
-                    console.log('findListThing' + JSON.stringify(res))
-                }).catch((err) => {
-                    console.log('findListThing' + err)
-                })
-            },
-            // 仓库搜索
-            findListLocation(item) {
-                let request = {};
-                request.locationName = item
-                findListLocation(request).then((res) => {
-                    this.itemsListLocation = res
-                    console.log('findListLocation' + JSON.stringify(res))
-                }).catch((err) => {
-                    console.log('findListLocation' + err)
-                })
+                this.AUTOAPI.createThing(item).then(()=>{
+                    console.log('createThing')
+                }).catch(err=>{
+                    console.log('createThing'+err)
+                });
             }
-
         },
         computed: {},
         onReachBottom() {
         },
         filters: {},
         onLoad() {
-            this.findListLocation("")
         },
         onShow() {
 
@@ -158,8 +129,8 @@
         onShareAppMessage() {
             let share = {
                 //分享到微信朋友
-                title: 'LOOP健身房预约',
-                path: '/pages/tarBar/coursetable/coursetable',
+                title: '家庭物品管理系统',
+                path: '/pages/home/home',
                 // imageURL: '/static/share.jpg'
             }
             return share;
@@ -179,6 +150,10 @@
         min-width: calc(4em + 15px);
     }
 </style>
+
+<!--如果新增的物品重名，那么物品数量就要增加-->
+<!--原则上，物品新增会先进行名称搜索，如果有，则增加数量，如果无，则正常新增-->
+
 
 
 <!--参考书-->

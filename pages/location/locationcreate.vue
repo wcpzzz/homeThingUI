@@ -1,41 +1,65 @@
 <template>
     <view class="page">
+        <!--        {
+                locationId	string
+                locationMaster	string
+                地点上级
+
+                locationMemo	string
+                地点注释
+
+                locationModiTime	string($date-time)
+                修改时间
+
+                locationName	string
+                地点名称
+
+                locationSlave	string
+                地点下属
+
+                locationUserCreater	string
+                创建者
+
+                locationUserMaster	string
+                管理者
+
+                }-->
         <view>
             <view class="cu-form-group">
                 <!--                默认模糊搜索-->
-                <view class="title">物品名</view>
-                <input placeholder="请输入物品名" name="input" v-model="createThingForm.thingName"></input>
+                <view class="title">地点名称</view>
+                <input placeholder="请输入地点名称" name="input" v-model="createLocationForm.locationName"></input>
             </view>
             <view class="cu-form-group">
-                <view class="title">物品价格</view>
-                <input placeholder="请输入物品价格" name="input" v-model="createThingForm.thingMoney"></input>
+                <view class="title">创建者</view>
+                <input placeholder="请输入创建者" name="input" v-model="createLocationForm.locationUserCreater"></input>
             </view>
             <view class="cu-form-group">
                 <!--                默认1-->
-                <view class="title">物品数量</view>
-                <input placeholder="请输入物品数量" name="input" v-model="createThingForm.thingNum"></input>
+                <view class="title">管理者</view>
+                <input placeholder="请输入管理者" name="input" v-model="createLocationForm.locationUserMaster"></input>
             </view>
             <view class="cu-form-group">
                 <!--                默认正常-->
-                <view class="title">物品状态</view>
-                <input placeholder="物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）" name="input" v-model="createThingForm.thingStatus"></input>
+                <view class="title">地点下属</view>
+                <input placeholder="请输入地点下属" name="input" v-model="createLocationForm.locationSlave"></input>
             </view>
             <view class="cu-form-group">
                 <!--                默认自己,二期-->
-                <view class="title">管理者</view>
-                <input placeholder="请输入管理者" name="input" v-model="createThingForm.master"></input>
+                <view class="title">地点上级</view>
+                <input placeholder="请输入地点上级" name="input" v-model="createLocationForm.locationMaster"></input>
             </view>
             <view class="cu-form-group">
                 <!--                默认自己,二期-->
-                <view class="title">拥有者</view>
-                <input placeholder="请输入拥有者" name="input" v-model="createThingForm.owner"></input>
+                <view class="title">地点注释</view>
+                <input placeholder="请输入地点上级" name="input" v-model="createLocationForm.locationMemo"></input>
             </view>
         </view>
 
         <view>
             <view class="wcpzzzfoot">
                 <view class="wcpzzzbtn-bottom" style="background-color:#ff8200;color: white"
-                      @tap="createThing(createThingForm)">确认新增
+                      @tap="createLocation(createLocationForm)">确认新增
                 </view>
             </view>
         </view>
@@ -44,25 +68,21 @@
 </template>
 
 <script>
-    import {findListThing, findListLocation, create, createThing} from '@/common/api.js'
 
     export default {
         data() {
             return {
                 //items替换方法的find
-                itemsListThing: [],
-                itemsListUser: [],
                 itemsListLocation: [],
-                createThingForm: {
-                    creater: '',
-                    id: '',
-                    master: '',
-                    modiTime: '',
-                    owner: '',
-                    thingMoney: '',
-                    thingName: '',
-                    thingNum: '',
-                    thingStatus: '',
+                createLocationForm: {
+                    locationId: '',
+                    locationMaster: '',
+                    locationMemo: '',
+                    locationModiTime: '',
+                    locationName: '',
+                    locationSlave: '',
+                    locationUserCreater: '',
+                    locationUserMaster: '',
                 }
             }
         },
@@ -70,36 +90,12 @@
             toPage(path) {
                 this.COMMONFUNCTION.toPage(path)
             },
-            createThing(item) {
-                let request = {};
-                request = item
-                createThing(request).then(res => {
-                    // this.itemsListThing = res
-                    console.log('createThing' + JSON.stringify(res))
-                }).catch((err) => {
-                    console.log('createThing' + err)
-                })
-            },
-            findListThing(item) {
-                let request = {};
-                request.userName = item
-                findListThing(request).then(res => {
-                    this.itemsListThing = res
-                    console.log('findListThing' + JSON.stringify(res))
-                }).catch((err) => {
-                    console.log('findListThing' + err)
-                })
-            },
-            // 仓库搜索
-            findListLocation(item) {
-                let request = {};
-                request.locationName = item
-                findListLocation(request).then((res) => {
-                    this.itemsListLocation = res
-                    console.log('findListLocation' + JSON.stringify(res))
-                }).catch((err) => {
-                    console.log('findListLocation' + err)
-                })
+            createLocation(item) {
+                this.AUTOAPI.createLocation(item).then(()=>{
+                    console.log('createLocation')
+                }).catch(err=>{
+                    console.log('createLocation'+err)
+                });
             }
 
         },
@@ -108,7 +104,6 @@
         },
         filters: {},
         onLoad() {
-            this.findListLocation("")
         },
         onShow() {
 
@@ -116,8 +111,8 @@
         onShareAppMessage() {
             let share = {
                 //分享到微信朋友
-                title: 'LOOP健身房预约',
-                path: '/pages/tarBar/coursetable/coursetable',
+                title: '家庭物品管理系统',
+                path: '/pages/home/home',
                 // imageURL: '/static/share.jpg'
             }
             return share;

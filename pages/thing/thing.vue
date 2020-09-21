@@ -27,8 +27,9 @@
         </view>
         <view>
             <!--            这里展示物品列表-->
-            <view class='cu-form-group' v-for="(item,index) in itemsListThing" :key="index">
+            <view class='cu-form-group' v-for="(item,index) in itemsListThing" :key="index" @tap="toPage('/pages/thing/thingupdate?thingId='+item.thingId)">
                 {{item.thingName}}
+                <sanjiao></sanjiao>
             </view>
         </view>
         <view>
@@ -60,24 +61,19 @@
                 this.COMMONFUNCTION.toPage(path)
             },
             findListThing(item){
-                let request = {};
-                request.userName = item
-                findListThing(request).then(res =>{
+                this.AUTOAPINEW.findListThingWithThingtypeWithUserWithLocation({}).then((res) => {
+                    // 物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）
                     this.itemsListThing = res
-                    console.log('findListThing' + JSON.stringify(res))
                 }).catch((err) => {
-                    console.log('findListThing' + err)
+                    console.log('findListThingWithThingtypeWithUserWithLocation' + err)
                 })
             },
             // 仓库搜索
             findListLocation(item) {
-                let request = {};
-                request.locationName = item
-                findListLocation(request).then((res) => {
+                this.AUTOAPINEW.findListLocationWithUser({}).then((res) => {
                     this.itemsListLocation = res
-                    console.log('findListLocation' + JSON.stringify(res))
                 }).catch((err) => {
-                    console.log('findListLocation' + err)
+                    console.log('findListLocationWithUser' + err)
                 })
             }
 
@@ -96,8 +92,8 @@
         onShareAppMessage() {
             let share = {
                 //分享到微信朋友
-                title: 'LOOP健身房预约',
-                path: '/pages/tarBar/coursetable/coursetable',
+                title: '家庭物品管理系统',
+                path: '/pages/home/home',
                 // imageURL: '/static/share.jpg'
             }
             return share;

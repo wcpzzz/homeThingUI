@@ -116,8 +116,115 @@
 				"backgroundColorTop":"#4e5367",
 				"navigationBarTitleText": "物品记录"
 			}
+		},
+		{
+			"path" : "pages/thingtype/thingtype",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "物品类型"
+			}
+		},
+		{
+			"path" : "pages/thingtype/thingtypecreate",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "物品类型新增"
+			}
+		},
+		{
+			"path" : "pages/thingtype/thingtyperecord",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "物品类型记录"
+			}
+		},
+		{
+			"path" : "pages/thingtype/thingtypeupdate",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "物品类型修改"
+			}
+		},
+		{
+			"path" : "pages/thingandlocation/thingandlocation",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "仓库&物品"
+			}
+		},
+		{
+			"path" : "pages/thingandlocation/thingandlocationcreate",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "新增仓库&物品"
+			}
+		},
+		{
+			"path" : "pages/thingandlocation/thingandlocationrecord",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "仓库&物品记录"
+			}
+		},
+		{
+			"path" : "pages/thingandlocation/thingandlocationupdate",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "修改仓库&物品"
+			}
+		},
+		{
+			"path" : "pages/thingandtype/thingandtype",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "物品&种类"
+			}
+		},
+		{
+			"path" : "pages/thingandtype/thingandtypecreate",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "新增物品&种类"
+			}
+		},
+		{
+			"path" : "pages/thingandtype/thingandtyperecord",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "物品&种类记录"
+			}
+		},
+		{
+			"path" : "pages/thingandtype/thingandtypeupdate",
+			"style" : {
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#4e5367",
+				"backgroundColorTop":"#4e5367",
+				"navigationBarTitleText": "修改物品&种类"
+			}
 		}
-
     ],
 	
 	"globalStyle": {

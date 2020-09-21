@@ -1,39 +1,73 @@
 <template>
     <view class="page">
-        <!--        地点查询，
-                种类查询，
-                所有者查询，
-                状态查询，（多条件）
-                查询完了，跳转到物品修改，
-                可跳至新建物品页面，-->
         <view>
-            <!--            这里放一堆地点tag-->
-            <view class='cu-tag round text-white bg-blue' v-for="(item,index) in itemsListLocation" :key="index">
-                {{item.locationName}}
-<!--                选择的时候变成绿色-->
+            <!--            这里放各种输入框-->
+
+            <!--            {
+                        creater	string
+                        创建者
+
+                        id	integer($int32)
+                        master	string
+                        管理者
+
+                        modiTime	string($date-time)
+                        修改时间
+
+                        owner	string
+                        拥有者
+
+                        thingMoney	number($double)
+                        物品价格
+
+                        thingName	string
+                        物品名
+
+                        thingNum	integer($int32)
+                        物品数量
+
+                        thingStatus	string
+                        物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）
+
+                        }-->
+            <view class="cu-form-group">
+                <!--                默认模糊搜索-->
+                <view class="title">物品名</view>
+                <input placeholder="请输入物品名" name="input" v-model="updateThingForm.thingName"></input>
+            </view>
+            <view class="cu-form-group">
+                <view class="title">物品价格</view>
+                <input placeholder="请输入物品价格" name="input" v-model="updateThingForm.thingMoney"></input>
+            </view>
+            <view class="cu-form-group">
+                <!--                默认1-->
+                <view class="title">物品数量</view>
+                <input placeholder="请输入物品数量" name="input" v-model="updateThingForm.thingNum"></input>
+            </view>
+            <view class="cu-form-group">
+                <!--                默认正常-->
+                <view class="title">物品状态</view>
+                <input placeholder="物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）" name="input"
+                       v-model="updateThingForm.thingStatus"></input>
+            </view>
+            <view class="cu-form-group">
+                <!--                默认自己,二期-->
+                <view class="title">管理者</view>
+                <input placeholder="请输入管理者" name="input" v-model="updateThingForm.thingUserMaster"></input>
+            </view>
+            <view class="cu-form-group">
+                <!--                默认自己,二期-->
+                <view class="title">拥有者</view>
+                <input placeholder="请输入拥有者" name="input" v-model="updateThingForm.thingUserOwner"></input>
             </view>
         </view>
+        <!--            这里是底部，放新增和记录按钮-->
+        <!--            记录按时间倒序展示物品变动情况-->
         <view>
-            <!--            这里放一堆种类tag-->
-        </view>
-        <view>
-            <!--            这里放一堆状态tag-->
-        </view>
-        <view>
-            <!--            这里放一堆所有者tag-->
-        </view>
-        <view>
-            <!--            这里放搜索框（物品名称）-->
-        </view>
-        <view>
-            <!--            这里展示物品列表-->
-        </view>
-        <view>
-            <!--            这里是底部，放新增和记录按钮-->
-            <!--            记录按时间倒序展示物品变动情况-->
             <view class="wcpzzzfoot">
-                <view class="wcpzzzbtn-bottom" style="background-color:#ff8200;color: white" @tap="toPage(thingcreate)">新增</view>
-                <view class="wcpzzzbtn-bottom" style="background-color:white;" @tap="toPage(thingrecord)">记录</view>
+                <view class="wcpzzzbtn-bottom" style="background-color:#ff8200;color: white"
+                      @tap="updateByIdThing(updateThingForm)">确认修改
+                </view>
             </view>
         </view>
         <c-notify ref='notify'></c-notify>
@@ -41,7 +75,7 @@
 </template>
 
 <script>
-    import {findListThing,findListLocation} from '@/common/api.js'
+    import {findListThing, findListLocation} from '@/common/api.js'
 
     export default {
         data() {
@@ -49,42 +83,47 @@
                 //items替换方法的find
                 itemsListThing: [],
                 itemsListUser: [],
-                itemsListLocation: []
+                itemsListLocation: [],
+                updateThingForm: {
+                    thingId: '',
+                    thingModiTime: '',
+                    thingMoney: '',
+                    thingName: '',
+                    thingNum: '',
+                    thingStatus: '',
+                    thingUserCreater: '',
+                    thingUserMaster: '',
+                    thingUserOwner: ''
+                }
             }
         },
         methods: {
             toPage(path) {
                 this.COMMONFUNCTION.toPage(path)
             },
+            updateByIdThing(item) {
+                this.AUTOAPI.updateByIdThing(item).then(() => {
+                    console.log('updateThing')
+                }).catch(err => {
+                    console.log('updateThing' + err)
+                });
+            },
             findListThing(item){
-                let request = {};
-                request.userName = item
-                findListThing(request).then(res =>{
-                    this.itemsListThing = res
-                    console.log('findListThing' + JSON.stringify(res))
+                this.AUTOAPINEW.findListThingWithThingtypeWithUserWithLocation(item).then((res) => {
+                    // 物品状态（1、正常；2、待找寻；3、待补充；4、待遗弃；5、待维修；）
+                    this.updateThingForm = res[0]
                 }).catch((err) => {
-                    console.log('findListThing' + err)
+                    console.log('findListThingWithThingtypeWithUserWithLocation' + err)
                 })
             },
-            // 仓库搜索
-            findListLocation(item) {
-                let request = {};
-                request.locationName = item
-                findListLocation(request).then((res) => {
-                    this.itemsListLocation = res
-                    console.log('findListLocation' + JSON.stringify(res))
-                }).catch((err) => {
-                    console.log('findListLocation' + err)
-                })
-            }
 
         },
         computed: {},
         onReachBottom() {
         },
         filters: {},
-        onLoad() {
-            this.findListLocation("")
+        onLoad(options) {
+            this.findListThing({thingId:options.thingId})
         },
         onShow() {
 
@@ -92,8 +131,8 @@
         onShareAppMessage() {
             let share = {
                 //分享到微信朋友
-                title: 'LOOP健身房预约',
-                path: '/pages/tarBar/coursetable/coursetable',
+                title: '家庭物品管理系统',
+                path: '/pages/home/home',
                 // imageURL: '/static/share.jpg'
             }
             return share;

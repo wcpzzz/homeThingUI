@@ -1,16 +1,17 @@
 <template>
     <view class="page">
-<!--        仓库名查询，
-        上级仓库查询，
-        下级仓库查询，
-        管理人员查询，（多条件）
-        查询完了，跳转到仓库修改或仓库拥有的物品列表，
-        可跳至新建仓库页面，-->
+        <!--        上级查询，
+                下级查询，
+                本人查询，（多条件）
+                1、查询完了，跳转到成员详情，拥有role权限的人可以进行修改
+                2、查询完了，跳转到成员管理的物品列表
+                拥有role权限的人可跳至新建成员页面
+        -->
         <view>
-<!--            这里放一堆地点tag-->
+            <!--            这里放一堆上级查询tag-->
         </view>
         <view>
-            <!--            这里放一堆种类tag-->
+            <!--            这里放一堆下级查询tag-->
         </view>
         <view>
             <!--            这里放一堆状态tag-->
@@ -19,15 +20,21 @@
             <!--            这里放一堆所有者tag-->
         </view>
         <view>
-<!--            这里放搜索框（物品名称）-->
+            <!--            这里放搜索框（物品名称）-->
         </view>
         <view>
-<!--            这里展示仓库列表-->
-<!--            默认查出全部-->
+            <!--            这里展示物品列表-->
+            <!--            <view class='cu-form-group' v-for="(item,index) in itemsListThing" :key="index">
+                            {{item.thingName}}
+                        </view>-->
         </view>
         <view>
-<!--            这里是底部，放新增和记录按钮-->
-<!--            记录按时间倒序展示物品变动情况-->
+            <!--            这里是底部，放新增和记录按钮-->
+            <!--            记录按时间倒序展示物品变动情况-->
+            <view class="wcpzzzfoot">
+                <view class="wcpzzzbtn-bottom" style="background-color:#ff8200;color: white" @tap="toPage('/pages/location/locationcreate')">新增</view>
+                <view class="wcpzzzbtn-bottom" style="background-color:white;" @tap="toPage('/pages/location/locationrecord')">记录</view>
+            </view>
         </view>
         <c-notify ref='notify'></c-notify>
     </view>
@@ -58,8 +65,8 @@
         onShareAppMessage() {
             let share = {
                 //分享到微信朋友
-                title: 'LOOP健身房预约',
-                path: '/pages/tarBar/coursetable/coursetable',
+                title: '家庭物品管理系统',
+                path: '/pages/home/home',
                 // imageURL: '/static/share.jpg'
             }
             return share;
